@@ -1,0 +1,13 @@
+First let's try to see if we can get contact cards appearing as an object on the window
+Probably gonna create a class to deal with all that.
+
+Next step should probably getting the branches on the family tree to work. I can foresee that each contact card is gonna have a particular 
+branch associated with it.
+
+In terms of branches, make sure to have the following: horizontal branch, vertical branch, left-sided branch (for like the oldest child),
+right sided branch (for the youngest child), and a double fork branch (coming from the parents).
+
+-----------------
+Right now, the current roadblock is that I need to be able to resize textures once they have been created. One method of doing this is using an extension
+library called SDL2_gfx. However, to install this library, I need to use 'makefiles' which I do not currently understand. Hencee I've been trying to see
+if I can install it some other way.

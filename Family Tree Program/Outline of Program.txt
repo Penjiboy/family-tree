@@ -1,0 +1,50 @@
+The goal of the program is to model a family tree. 
+Information about the contact names should be stored in structure variables, i.e. One struct that each contact uses. 
+All of the contact info should be stored on a separate .txt file. The program itself should not store contain such information.
+There should be a separate function that actually outputs the family tree, hence the user must be prompted if they wish to view the tree or add a name.
+When prompting user, use the 'switch' functions rather than if statements.
+If the family tree is to be viewed, all of the information on the .txt file must be sorted in order of generation. After sorting, information can be presented.
+Write a function that can sort the information.
+If the family tree is to be added onto, use the 'gets()' function rather than scanf. And be sure to store info onto the structure. 
+If the output is actually gonna look like a family tree, I'm gonna have to split the screen into sections of diffrerent number of columns, hence
+there must be a function to determine how many names are on a line, and also write a function that can separate the screen into sections.
+
+
+**Contact Structure
+-Name:
+-Date of Birth: Year/Month/Day
+-Date of Death: Year/Month/Day
+-Child of [Date of Birth]
+
+Might want to check that the data files are opening properly
+
+Come up with a way to incorporate spouses.
+One problem that might come up is when adding a user, and the 'child of' section. What if the user inputs a date that is for a spouse that isn't part of this family tree.
+-on the contact structure, add an entry entitled 'Married to:' which is gonna have to be a char array
+
+**Come up with some sort of sorting system, so that contacts be sorted via generation, and that subsequent children fall under the respective parent
+Sorting:
+-Generation #
+-Child of [Date of Birth]. 
+-Date of Birth: Year/Month/Day  *** Warning, this does not work for twins
+
+Outline for Sort function:
+-Open up the two files, the main file and the companion file.
+-Scan through the main file and get a count of how many members there are
+x-Setup a dynamic memory 2D char array with MAX number of columns and count number of rows
+x-Put all the members information onto the array
+HAVING TROUBLE DOING THIS-setup a dynamic memory character array with 'count' number of rows and MAX number of columns
+-store the 'child_of date of birth' and 'date of birth' info onto the array
+-sort the array from oldest to youngest...
+-now to copy the sorted list onto the data file, open up each entry, search the main file for the corresponding entry, write this entry onto the companion file. Do the same
+ thing for the next entry until we finish all entries
+-when finished copying info onto the companion file, write the info from the companion file onto the main file
+-close both files.
+
+ALTERNATIVE- Create a char array of 2 rows and MAX number of columns
+-scan the document, find the oldest member, store this onto the first row
+-scan the document, compare each member to the highlighted oldest member, if second member is older, they now become the oldest
+-copy the oldest member onto companion file. Find the next oldest member, but ignore the ones previously copied
+-to ignore members previously copied, when searching for next oldest member, have a criteria that shows oldest but younger than previously copied member
+-still need to do a count so that the function knows when to stop
+--instead of creating a new array, use the scanned_text structure
