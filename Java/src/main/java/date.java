@@ -64,7 +64,7 @@ public class Date {
             count++;
         }
         count++;
-        while(myBuffer.charAt(count) != ' ') {
+        while((count < myBuffer.length()) && (myBuffer.charAt(count) != ' ')) {
             year.append(myBuffer.charAt(count));
             count++;
         }
@@ -138,19 +138,19 @@ public class Date {
      * @param otherDate
      * @return boolean indicating whether this date is older than the input date
      */
-    boolean isOlderThan(Date otherDate) {
+    public boolean isOlderThan(Date otherDate) {
         boolean isOlderThan = false;
-        if(this.year > otherDate.year) {
+        if(this.year < otherDate.year) {
             isOlderThan = true;
             return isOlderThan;
         }
         else if(this.year == otherDate.year) {
-            if(this.monthInt > otherDate.monthInt) {
+            if(this.monthInt < otherDate.monthInt) {
                 isOlderThan = true;
                 return isOlderThan;
             }
             else if(this.monthInt == otherDate.monthInt) {
-                if(this.day > otherDate.day) {
+                if(this.day < otherDate.day) {
                     isOlderThan = true;
                     return isOlderThan;
                 }
@@ -164,19 +164,19 @@ public class Date {
      * @param otherDate
      * @return boolean indicating whether this date is younger than the input date
      */
-    boolean isYoungerThan(Date otherDate) {
+    public boolean isYoungerThan(Date otherDate) {
         boolean isYoungerThan = false;
-        if(this.year < otherDate.year) {
+        if(this.year > otherDate.year) {
             isYoungerThan = true;
             return isYoungerThan;
         }
         else if(this.year == otherDate.year) {
-            if(this.monthInt < otherDate.monthInt) {
+            if(this.monthInt > otherDate.monthInt) {
                 isYoungerThan = true;
                 return isYoungerThan;
             }
             else if(this.monthInt == otherDate.monthInt) {
-                if(this.day < otherDate.day) {
+                if(this.day > otherDate.day) {
                     isYoungerThan = true;
                     return isYoungerThan;
                 }
@@ -190,7 +190,7 @@ public class Date {
      * @param other
      * @return
      */
-    boolean equals(Date other) {
+    public boolean equals(Date other) {
         boolean equals = true;
         if(this.isOlderThan(other) || this.isYoungerThan(other))
             equals = false;

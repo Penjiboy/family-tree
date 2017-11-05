@@ -34,4 +34,17 @@ public class DateTest {
         assertEquals("August", myDate.monthText);
     }
 
+    @Test
+    public void comparer0() {
+        Date myDate = new Date("27/06/2002");
+        Date myOtherDate = new Date(17,8,1998);
+        assertTrue(myDate.isYoungerThan(myOtherDate));
+        assertFalse(myDate.isOlderThan(myOtherDate));
+        assertFalse(myDate.equals(myOtherDate));
+        assertFalse(myOtherDate.isYoungerThan(myDate));
+        assertTrue(myOtherDate.isOlderThan(myDate));
+        assertFalse(myOtherDate.equals(myDate));
+        assertTrue((myDate.equals(myDate)));
+    }
+
 }
