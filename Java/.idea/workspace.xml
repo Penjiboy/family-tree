@@ -12,29 +12,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Member.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Member.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Member.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="323">
+              <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#206#214#0" expanded="true" />
-                <element signature="e#266#274#0" expanded="true" />
-                <element signature="e#325#333#0" expanded="true" />
-                <element signature="e#385#393#0" expanded="true" />
-                <element signature="e#447#455#0" expanded="true" />
+                <element signature="e#183#191#0" expanded="true" />
+                <element signature="e#243#251#0" expanded="true" />
+                <element signature="e#302#310#0" expanded="true" />
+                <element signature="e#362#370#0" expanded="true" />
+                <element signature="e#424#432#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Name.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Name.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Name.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-              <folding />
+            <state relative-caret-position="680">
+              <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#213#221#0" expanded="true" />
+                <element signature="e#548#556#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="NameTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/NameTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="82" lean-forward="false" selection-start-line="17" selection-start-column="82" selection-end-line="17" selection-end-column="82" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -135,8 +151,9 @@
         <option value="$PROJECT_DIR$/src/main/java/Date.java" />
         <option value="$PROJECT_DIR$/src/test/java/DateTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/member.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Member.java" />
         <option value="$PROJECT_DIR$/src/main/java/Name.java" />
+        <option value="$PROJECT_DIR$/src/test/java/NameTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Member.java" />
       </list>
     </option>
   </component>
@@ -181,6 +198,12 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Family Tree" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -203,7 +226,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DateTest.constructors2">
+  <component name="RunManager" selected="JUnit.NameTest.test0">
     <configuration name="DateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -254,31 +277,6 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="DateTest.constructors0" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="test.java.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="Family Tree" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="test.java" />
-      <option name="MAIN_CLASS_NAME" value="test.java.DateTest" />
-      <option name="METHOD_NAME" value="constructors0" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
     <configuration name="DateTest.constructors1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -317,6 +315,31 @@
       <option name="PACKAGE_NAME" value="test.java" />
       <option name="MAIN_CLASS_NAME" value="test.java.DateTest" />
       <option name="METHOD_NAME" value="constructors2" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="NameTest.test0" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="test.java.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="Family Tree" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="test.java" />
+      <option name="MAIN_CLASS_NAME" value="test.java.NameTest" />
+      <option name="METHOD_NAME" value="test0" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -410,19 +433,19 @@
       <listeners />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.DateTest.constructors0" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.DateTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.DateTest.constructors1" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.DateTest.constructors2" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.DateTest.comparer0" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.DateTest" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.DateTest.constructors1" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.DateTest.constructors2" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.DateTest.comparer0" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.NameTest.test0" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.DateTest.constructors2" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.DateTest.comparer0" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.DateTest.constructors1" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.DateTest" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.DateTest.constructors0" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.NameTest.test0" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.DateTest.constructors2" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.DateTest.comparer0" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.DateTest.constructors1" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.DateTest" />
       </list>
     </recent_temporary>
   </component>
@@ -440,9 +463,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DateTest_comparer0 - 2017.11.04 at 18h 15m 58s.xml">
-      <configuration name="DateTest.comparer0" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="DateTest_comparer0 - 2017.11.04 at 20h 25m 31s.xml">
       <configuration name="DateTest.comparer0" configurationId="JUnit" />
     </history-entry>
@@ -469,6 +489,9 @@
     </history-entry>
     <history-entry file="DateTest_constructors2 - 2017.11.10 at 17h 56m 40s.xml">
       <configuration name="DateTest.constructors2" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="NameTest_test0 - 2017.11.10 at 21h 22m 30s.xml">
+      <configuration name="NameTest.test0" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -519,11 +542,11 @@
           <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#206#214#0" expanded="true" />
-            <element signature="e#266#274#0" expanded="true" />
-            <element signature="e#325#333#0" expanded="true" />
-            <element signature="e#385#393#0" expanded="true" />
-            <element signature="e#447#455#0" expanded="true" />
+            <element signature="e#183#191#0" expanded="true" />
+            <element signature="e#243#251#0" expanded="true" />
+            <element signature="e#302#310#0" expanded="true" />
+            <element signature="e#362#370#0" expanded="true" />
+            <element signature="e#424#432#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -592,11 +615,11 @@
           <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#206#214#0" expanded="true" />
-            <element signature="e#266#274#0" expanded="true" />
-            <element signature="e#325#333#0" expanded="true" />
-            <element signature="e#385#393#0" expanded="true" />
-            <element signature="e#447#455#0" expanded="true" />
+            <element signature="e#183#191#0" expanded="true" />
+            <element signature="e#243#251#0" expanded="true" />
+            <element signature="e#302#310#0" expanded="true" />
+            <element signature="e#362#370#0" expanded="true" />
+            <element signature="e#424#432#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -665,11 +688,11 @@
           <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#206#214#0" expanded="true" />
-            <element signature="e#266#274#0" expanded="true" />
-            <element signature="e#325#333#0" expanded="true" />
-            <element signature="e#385#393#0" expanded="true" />
-            <element signature="e#447#455#0" expanded="true" />
+            <element signature="e#183#191#0" expanded="true" />
+            <element signature="e#243#251#0" expanded="true" />
+            <element signature="e#302#310#0" expanded="true" />
+            <element signature="e#362#370#0" expanded="true" />
+            <element signature="e#424#432#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -798,26 +821,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Member.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Name.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        <state relative-caret-position="680">
+          <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#206#214#0" expanded="true" />
-            <element signature="e#266#274#0" expanded="true" />
-            <element signature="e#325#333#0" expanded="true" />
-            <element signature="e#385#393#0" expanded="true" />
-            <element signature="e#447#455#0" expanded="true" />
+            <element signature="e#213#221#0" expanded="true" />
+            <element signature="e#548#556#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Name.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/NameTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="8" lean-forward="false" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding />
+        <state relative-caret-position="289">
+          <caret line="17" column="82" lean-forward="false" selection-start-line="17" selection-start-column="82" selection-end-line="17" selection-end-column="82" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Member.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#183#191#0" expanded="true" />
+            <element signature="e#243#251#0" expanded="true" />
+            <element signature="e#302#310#0" expanded="true" />
+            <element signature="e#362#370#0" expanded="true" />
+            <element signature="e#424#432#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

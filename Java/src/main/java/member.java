@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Member {
-    public final String name = new String();
+    public Name name;
     public List<Member> spouse = new ArrayList<Member>();
     public List<Member> children = new ArrayList<Member>();
     public List<Member> parents = new ArrayList<Member>();
