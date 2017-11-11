@@ -32,6 +32,7 @@ public class DateTest {
         assertEquals(8, myDate.monthInt);
         assertEquals(1998, myDate.year);
         assertEquals("August", myDate.monthText);
+        assertEquals("17/8/1998", myDate.toString());
     }
 
     @Test

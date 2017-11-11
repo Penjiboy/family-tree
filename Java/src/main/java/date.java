@@ -81,10 +81,27 @@ public class Date {
     }
 
     /**
+     * Method to convert the date into a string
+     * @returns A string representation of the date
+     */
+    public String toString() {
+        String myDate = this.day + "/" + this.monthInt + "/" + this.year;
+        return myDate;
+    }
+
+    /**
+     * Method to calculate the age, i.e. how much time has passed since the date of birth
+     */
+    public int age() {
+        //TODO: Implment this method
+        return 0; //Change this
+    }
+
+    /**
      * Method to check that all the arguments are valid
      * @return true if the arguments are valid, false is otherwise
      */
-    boolean checkArguments() {
+    private boolean checkArguments() {
         boolean success = true;
         switch(this.monthInt) {
             case 1: if((this.day < 1) || (this.day > 31) )
