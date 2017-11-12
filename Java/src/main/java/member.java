@@ -46,6 +46,29 @@ public class Member {
     }
 
     /**
+     * Constructor of a Member object
+     * @param name
+     * @param dateOfBirth
+     * @param dateOfDeath
+     * @param spouse
+     * @param children
+     * @param parents
+     * @param siblings
+     * @param extraNotes
+     */
+    public Member(Name name, Date dateOfBirth, Date  dateOfDeath, List<Member> spouse, List<Member> children,
+                  List<Member> parents, List<Member> siblings, List<String> extraNotes) {
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.dateOfDeath = dateOfDeath;
+        this.spouse = spouse;
+        this.children = children;
+        this.parents = parents;
+        this.siblings = siblings;
+        this.extraNotes = extraNotes;
+    }
+
+    /**
      * Constructor of a Member object using all parameters. Name is input as a String object
      * @param name
      * @param spouse
@@ -70,6 +93,30 @@ public class Member {
     }
 
     /**
+     * Constructor of a Member object
+     * @param name
+     * @param dateOfBirth
+     * @param dateOfDeath
+     * @param spouse
+     * @param children
+     * @param parents
+     * @param siblings
+     * @param extraNotes
+     */
+    public Member(String name, Date dateOfBirth, Date  dateOfDeath, List<Member> spouse, List<Member> children,
+                  List<Member> parents, List<Member> siblings, List<String> extraNotes) {
+        Name myName = new Name(name);
+        this.name = myName;
+        this.dateOfBirth = dateOfBirth;
+        this.dateOfDeath = dateOfDeath;
+        this.spouse = spouse;
+        this.children = children;
+        this.parents = parents;
+        this.siblings = siblings;
+        this.extraNotes = extraNotes;
+    }
+
+    /**
      * Constructor that takes in only a name object
      * @param name
      */
@@ -86,7 +133,7 @@ public class Member {
      * Add the date of birth
      * @param dateOfBirth
      */
-    public void addDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -94,9 +141,57 @@ public class Member {
      * Add the date of death
      * @param dateOfDeath
      */
-    public void addDateOfDeath(Date dateOfDeath) {
+    public void setDateOfDeath(Date dateOfDeath) {
         this.dateOfDeath = dateOfDeath;
     }
 
-    
+    /**
+     * Add spouse
+     * @modifies the spouse list
+     * @param spouse
+     */
+    public void addSpouse(Member spouse) {
+        this.spouse.add(spouse);
+    }
+
+    /**
+     * add child
+     * @modifies the children list
+     * @param child
+     */
+    public void addChild(Member child) {
+        this.children.add(child);
+    }
+
+    /**
+     * add a parent to the parents list
+     * @param parent
+     */
+    public void addParent(Member parent) {
+        this.parents.add(parent);
+    }
+
+    /**
+     * add a sibling to the siblings list
+     * @param sibling
+     */
+    public void addSibling(Member sibling) {
+        this.siblings.add(sibling);
+    }
+
+    /**
+     * Add a note to the extraNotes list
+     * @param note
+     */
+    public void addNote(String note) {
+        this.extraNotes.add(note);
+    }
+
+    /**
+     * Set the image for this Member
+     * @param image
+     */
+    public void setImage(File image) {
+        this.image = image;
+    }
 }
