@@ -194,4 +194,64 @@ public class Member {
     public void setImage(File image) {
         this.image = image;
     }
+
+    /**
+     * Get name
+     * @return name of this member
+     */
+    public Name getName() {
+        return this.name;
+    }
+
+    /**
+     * Get date of birth
+     * @return date of birth
+     */
+    public Date getDateOfBirth() { return this.dateOfBirth; }
+
+    /**
+     * Get date of death
+     * @return date of death
+     */
+    public Date getDateOfDeath() {return this.dateOfDeath;}
+
+    /**
+     * Get a list of spouses
+     * @return list of spouses
+     */
+    public List<Member> getSpouse() {
+        return spouse;
+    }
+
+    /**
+     * Get list of children
+     * @return children
+     */
+    public List<Member> getChildren() {
+        return children;
+    }
+
+    /**
+     * Get list of parents
+     * @return list of parents
+     */
+    public List<Member> getParents() {
+        return parents;
+    }
+
+    /**
+     * Get list of siblings
+     * @return list of siblings
+     */
+    public List<Member> getSiblings() {
+        return siblings;
+    }
+
+    /**
+     * Get list of extranotes
+     * @return list of extranotes
+     */
+    public List<String> getExtraNotes() {
+        return extraNotes;
+    }
 }
