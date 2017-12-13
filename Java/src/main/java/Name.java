@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Name {
-    public String first;
-    public String last;
-    public List<String> middle = new ArrayList<String>();
-    public String fullName;
+    public final String first;
+    public final String last;
+    public final List<String> middle = new ArrayList<String>();
+    public final String fullName;
 
     /**
      * Construct for the Name object
@@ -26,7 +26,7 @@ public class Name {
 
         switch(names.size()) {
             case 0: throw new IllegalArgumentException("Error! Name entered is empty");
-            case 1: break;
+            case 1: throw new IllegalArgumentException("Must enter at least a first and last name");
             case 2:
                 this.first = names.get(0);
                 this.last = names.get(1);
@@ -39,5 +39,32 @@ public class Name {
                     this.middle.add(names.get(count));
                 }
         }
+    }
+
+    /**
+     * checks to see if two names are equal based on first name and last name
+     * @param other
+     * @return true if the names are equal, false otherwise
+     */
+    public boolean equals(Object other) {
+        if(!(other instanceof Name))
+            return false;
+        else {
+            boolean success = true;
+            if(!(this.first.contentEquals(((Name) other).first)))
+                success = false;
+            if(!(this.last.contentEquals(((Name) other).last)))
+                success = false;
+            return success;
+        }
+    }
+
+    /**
+     * return a hashCode
+     * @return
+     */
+    public int hashCode() {
+        //TODO: perhaps this could be better?
+        return first.hashCode() + last.hashCode() + last.hashCode();
     }
 }

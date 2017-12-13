@@ -139,6 +139,26 @@ public class Member {
     }
 
     /**
+     * Compares this member to other, returns true if the two members are the same based on name, date of birth, and
+     * gender
+     * @param other
+     * @return true if the two members are the same, false otherwise
+     */
+    public boolean equals(Object other) {
+        if(!(other instanceof Member))
+            return false;
+        else {
+            if(!(this.name.equals(((Member) other).name)))
+                return false;
+            if(!(this.dateOfBirth.equals(((Member) other).dateOfBirth)))
+                return false;
+            if(!(this.gender.equals(((Member) other).gender)))
+                return false;
+            return true;
+        }
+    }
+
+    /**
      * Add the date of birth
      * @param dateOfBirth
      */

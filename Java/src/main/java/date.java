@@ -207,11 +207,20 @@ public class Date {
      * @param other
      * @return
      */
-    public boolean equals(Date other) {
+    public boolean equals(Object other) {
         boolean equals = true;
-        if(this.isOlderThan(other) || this.isYoungerThan(other))
+        if(!(other instanceof Date))
+            return false;
+        if(this.isOlderThan((Date) other) || this.isYoungerThan((Date) other))
             equals = false;
         return equals;
+    }
+
+    /**
+     * @return hashCode
+     */
+    public int hashCode() {
+        return (int) (Math.pow(day,2) + Math.pow(monthInt, 2) + year);
     }
 
 
