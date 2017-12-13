@@ -34,13 +34,18 @@ public class Relationship {
     }
 
 
-
     /**
      * private constructor that is used only by the determineRelationship method
      * @param relation
+     * @param relationDirection
+     * @param memberA
+     * @param memberB
+     * @param greatCount
      */
-    private Relationship(Relation relation, Member memberA, Member memberB, int greatCount) {
+    private Relationship(Relation relation, RelationDirection relationDirection,
+                         Member memberA, Member memberB, int greatCount) {
         this.relation = relation;
+        this.relationDirection = relationDirection;
         this.memberA = memberA;
         this.memberB = memberB;
         this.greatCount = greatCount;
@@ -53,8 +58,13 @@ public class Relationship {
      * @return relationship between memberA and memberB
      */
     public static Relationship determineRelationship(Member memberA, Member memberB) {
-        //Current idea is to use a breadthFirst search type algorithim
+        //Current idea is to use a breadthFirst search type algorithm, get a linked list setup, check each member in the
+        //direct connections, then check the next level of members until either we find the member or we run out of
+        //members
 
+        //Still need to find a way to trace back the connection, and then to identify what type of relationship it is
+
+        return null;
     }
 
 }
