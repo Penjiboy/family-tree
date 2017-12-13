@@ -10,9 +10,17 @@ public class Relationship {
     /**
      * Relation enumeration, where we define the possible relationships from person A to person B
      */
-    public enum relation {
+    public enum Relation {
         brother, sister, sibling, cousin, halfBrother, halfSister,
         mother, father, grandFather, grandMother, son, daughter, grandSon, grandDaughter,
-        uncle, aunt, nephew, niece, 
+        uncle, aunt, nephew, niece,
+        stepMother, stepFather, stepBrother, stepSister, stepSon, stepDaughter,
+        unrelated
     }
+    int greatCount = 0; //i.e. if we want to describe a great-great-great grandfather, this value would be 3
+    Member memberA, memberB; //the two members involved in the relationship. The relationship is always from A to B
+    Relation relation;
+
+
+
 }

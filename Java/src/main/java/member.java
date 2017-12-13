@@ -8,19 +8,24 @@ public class Member {
     public Name name;
     public Date dateOfBirth;
     public Date dateOfDeath;
+    public Gender gender;
     public List<Member> spouse = new ArrayList<Member>();
     public List<Member> children = new ArrayList<Member>();
     public List<Member> parents = new ArrayList<Member>();
     public List<Member> siblings = new ArrayList<Member>();
     public List<String> extraNotes = new ArrayList<String>();
     public File image;
-    public membership membershipStatus;
+    public Membership membershipStatus;
 
-    public enum membership {
+    public enum Membership {
         initialMembership,
         childMembership,
         spouseMembership
     };
+
+    public enum Gender {
+        male, female
+    }
 
     /**
      * Constructor of a Member object using all parameters. Name is input as a Name object
@@ -32,11 +37,12 @@ public class Member {
      * @param extraNotes
      * @param image
      */
-    public Member(Name name, Date dateOfBirth, Date  dateOfDeath, List<Member> spouse, List<Member> children,
+    public Member(Name name, Date dateOfBirth, Date  dateOfDeath, Gender gender, List<Member> spouse, List<Member> children,
                   List<Member> parents, List<Member> siblings, List<String> extraNotes, File image) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.dateOfDeath = dateOfDeath;
+        this.gender = gender;
         this.spouse = spouse;
         this.children = children;
         this.parents = parents;
@@ -56,11 +62,12 @@ public class Member {
      * @param siblings
      * @param extraNotes
      */
-    public Member(Name name, Date dateOfBirth, Date  dateOfDeath, List<Member> spouse, List<Member> children,
+    public Member(Name name, Date dateOfBirth, Date  dateOfDeath, Gender gender, List<Member> spouse, List<Member> children,
                   List<Member> parents, List<Member> siblings, List<String> extraNotes) {
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.dateOfDeath = dateOfDeath;
+        this.gender = gender;
         this.spouse = spouse;
         this.children = children;
         this.parents = parents;
@@ -78,12 +85,13 @@ public class Member {
      * @param extraNotes
      * @param image
      */
-    public Member(String name, Date dateOfBirth, Date  dateOfDeath, List<Member> spouse, List<Member> children,
+    public Member(String name, Date dateOfBirth, Date  dateOfDeath, Gender gender, List<Member> spouse, List<Member> children,
                   List<Member> parents, List<Member> siblings, List<String> extraNotes, File image) {
         Name myName = new Name(name);
         this.name = myName;
         this.dateOfBirth = dateOfBirth;
         this.dateOfDeath = dateOfDeath;
+        this.gender = gender;
         this.spouse = spouse;
         this.children = children;
         this.parents = parents;
@@ -103,12 +111,13 @@ public class Member {
      * @param siblings
      * @param extraNotes
      */
-    public Member(String name, Date dateOfBirth, Date  dateOfDeath, List<Member> spouse, List<Member> children,
+    public Member(String name, Date dateOfBirth, Date  dateOfDeath, Gender gender, List<Member> spouse, List<Member> children,
                   List<Member> parents, List<Member> siblings, List<String> extraNotes) {
         Name myName = new Name(name);
         this.name = myName;
         this.dateOfBirth = dateOfBirth;
         this.dateOfDeath = dateOfDeath;
+        this.gender = gender;
         this.spouse = spouse;
         this.children = children;
         this.parents = parents;
@@ -143,6 +152,24 @@ public class Member {
      */
     public void setDateOfDeath(Date dateOfDeath) {
         this.dateOfDeath = dateOfDeath;
+    }
+
+    /**
+     * Set gender
+     * @param gender
+     */
+    public void setGender(Object gender) {
+        if(gender instanceof String) {
+            if ( gender.toString().contentEquals("female") || gender.toString().contentEquals("girl") ||
+                    gender.toString().contentEquals("woman"))
+                this.gender = Gender.female;
+            else if (gender.toString().contentEquals("male") || gender.toString().contentEquals("boy") ||
+                    gender.toString().contentEquals("man"))
+                this.gender = Gender.male;
+        }
+        else if(gender instanceof Gender)
+            this.gender = (Gender) gender;
+        else throw new IllegalArgumentException();
     }
 
     /**
@@ -214,6 +241,14 @@ public class Member {
      * @return date of death
      */
     public Date getDateOfDeath() {return this.dateOfDeath;}
+
+    /**
+     * Get the gender
+     * @return gender
+     */
+    public Gender getGender() {
+        return gender;
+    }
 
     /**
      * Get a list of spouses

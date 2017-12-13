@@ -12,40 +12,61 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Member.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Member.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Member.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1496">
-              <caret line="256" column="1" lean-forward="false" selection-start-line="256" selection-start-column="1" selection-end-line="256" selection-end-column="1" />
+            <state relative-caret-position="722">
+              <caret line="248" column="31" lean-forward="false" selection-start-line="248" selection-start-column="31" selection-end-line="248" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="class#membership#0;class#Member#0" expanded="false" />
+                <element signature="class#Membership#0;class#Member#0" expanded="false" />
                 <element signature="docComment;method#Member#0;class#Member#0" expanded="false" />
-                <element signature="method#Member#0;class#Member#0" expanded="false" />
                 <element signature="docComment;method#Member#1;class#Member#0" expanded="false" />
-                <element signature="method#Member#1;class#Member#0" expanded="false" />
                 <element signature="docComment;method#Member#2;class#Member#0" expanded="false" />
-                <element signature="method#Member#2;class#Member#0" expanded="false" />
                 <element signature="docComment;method#Member#3;class#Member#0" expanded="false" />
                 <element signature="method#Member#3;class#Member#0" expanded="false" />
                 <element signature="docComment;method#Member#4;class#Member#0" expanded="false" />
                 <element signature="method#Member#5;class#Member#0" expanded="false" />
                 <element signature="docComment;method#setDateOfBirth#0;class#Member#0" expanded="false" />
-                <element signature="docComment;method#setDateOfDeath#0;class#Member#0" expanded="false" />
                 <element signature="docComment;method#addSpouse#0;class#Member#0" expanded="false" />
+                <element signature="e#5454#5455#0" expanded="true" />
+                <element signature="e#5493#5494#0" expanded="true" />
                 <element signature="docComment;method#addChild#0;class#Member#0" expanded="false" />
+                <element signature="e#5623#5624#0" expanded="true" />
+                <element signature="e#5663#5664#0" expanded="true" />
                 <element signature="docComment;method#addParent#0;class#Member#0" expanded="false" />
+                <element signature="e#5784#5785#0" expanded="true" />
+                <element signature="e#5824#5825#0" expanded="true" />
                 <element signature="docComment;method#addSibling#0;class#Member#0" expanded="false" />
+                <element signature="e#5950#5951#0" expanded="true" />
+                <element signature="e#5992#5993#0" expanded="true" />
                 <element signature="docComment;method#addNote#0;class#Member#0" expanded="false" />
+                <element signature="e#6108#6109#0" expanded="true" />
+                <element signature="e#6149#6150#0" expanded="true" />
                 <element signature="docComment;method#setImage#0;class#Member#0" expanded="false" />
+                <element signature="e#6262#6263#0" expanded="true" />
+                <element signature="e#6296#6297#0" expanded="true" />
                 <element signature="docComment;method#getName#0;class#Member#0" expanded="false" />
+                <element signature="e#6392#6393#0" expanded="true" />
+                <element signature="e#6424#6425#0" expanded="true" />
                 <element signature="docComment;method#getDateOfBirth#0;class#Member#0" expanded="false" />
                 <element signature="docComment;method#getDateOfDeath#0;class#Member#0" expanded="false" />
+                <element signature="e#6810#6811#0" expanded="true" />
                 <element signature="docComment;method#getSpouse#0;class#Member#0" expanded="false" />
+                <element signature="e#6925#6926#0" expanded="true" />
+                <element signature="e#6954#6955#0" expanded="true" />
                 <element signature="docComment;method#getChildren#0;class#Member#0" expanded="false" />
+                <element signature="e#7063#7064#0" expanded="true" />
+                <element signature="e#7094#7095#0" expanded="true" />
                 <element signature="docComment;method#getParents#0;class#Member#0" expanded="false" />
+                <element signature="e#7208#7209#0" expanded="true" />
+                <element signature="e#7238#7239#0" expanded="true" />
                 <element signature="docComment;method#getSiblings#0;class#Member#0" expanded="false" />
+                <element signature="e#7355#7356#0" expanded="true" />
+                <element signature="e#7386#7387#0" expanded="true" />
                 <element signature="docComment;method#getExtraNotes#0;class#Member#0" expanded="false" />
+                <element signature="e#7509#7510#0" expanded="true" />
+                <element signature="e#7542#7543#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,29 +75,28 @@
       <file leaf-file-name="Storage.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Storage.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="126">
               <caret line="6" column="105" lean-forward="false" selection-start-line="6" selection-start-column="105" selection-end-line="6" selection-end-column="105" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Algorithms.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/../../../UBC/CPEN 221/Machine Problems/MP 3/f17-mp3-Penjiboy/src/main/java/ca/ubc/ece/cpen221/mp3/graph/Algorithms.java">
+      <file leaf-file-name="Date.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Date.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdjacencyListGraph.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../../../UBC/CPEN 221/Machine Problems/MP 3/f17-mp3-Penjiboy/src/main/java/ca/ubc/ece/cpen221/mp3/graph/AdjacencyListGraph.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="1008">
+              <caret line="99" column="7" lean-forward="false" selection-start-line="99" selection-start-column="7" selection-end-line="99" selection-end-column="7" />
+              <folding>
+                <element signature="method#Date#0;class#Date#0" expanded="false" />
+                <element signature="method#Date#1;class#Date#0" expanded="false" />
+                <element signature="method#Date#2;class#Date#0" expanded="false" />
+                <element signature="method#checkArguments#0;class#Date#0" expanded="false" />
+                <element signature="method#isOlderThan#0;class#Date#0" expanded="false" />
+                <element signature="method#isYoungerThan#0;class#Date#0" expanded="false" />
+                <element signature="method#equals#0;class#Date#0" expanded="false" />
+                <element signature="class#Month#0;class#Date#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,8 +104,8 @@
       <file leaf-file-name="Relationship.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Relationship.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+            <state relative-caret-position="483">
+              <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -117,11 +137,11 @@
         <option value="$PROJECT_DIR$/src/main/java/member.java" />
         <option value="$PROJECT_DIR$/src/main/java/Name.java" />
         <option value="$PROJECT_DIR$/src/test/java/NameTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/Member.java" />
         <option value="$PROJECT_DIR$/src/main/java/storage.java" />
         <option value="$PROJECT_DIR$/src/main/java/Storage.java" />
         <option value="$PROJECT_DIR$/src/main/java/relationship.java" />
         <option value="$PROJECT_DIR$/src/main/java/Relationship.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Member.java" />
       </list>
     </option>
   </component>
@@ -145,6 +165,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -169,8 +191,6 @@
       </pane>
       <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -189,6 +209,26 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.NameTest.test0">
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <module />
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="" />
+      <envs />
+    </configuration>
     <configuration name="DateTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -314,26 +354,6 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <module />
-    </configuration>
-    <configuration default="true" type="Application" factoryName="Application">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="" />
-      <envs />
-    </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -353,12 +373,6 @@
       </option>
       <envs />
       <patterns />
-    </configuration>
-    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
-      <module name="" />
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
-      <option name="PROGRAM_PARAMETERS" />
-      <predefined_log_file id="idea.log" enabled="true" />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -394,6 +408,12 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file id="idea.log" enabled="true" />
+    </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JUnit.DateTest" />
       <item index="1" class="java.lang.String" itemvalue="JUnit.DateTest.constructors1" />
@@ -413,6 +433,9 @@
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -457,7 +480,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -467,18 +490,18 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3294423" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32904884" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24945135" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24895833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39974293" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -498,43 +521,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/Member.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4352">
-          <caret line="256" column="1" lean-forward="false" selection-start-line="256" selection-start-column="1" selection-end-line="256" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#membership#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#Member#0;class#Member#0" expanded="false" />
-            <element signature="method#Member#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#Member#1;class#Member#0" expanded="false" />
-            <element signature="method#Member#1;class#Member#0" expanded="false" />
-            <element signature="docComment;method#Member#2;class#Member#0" expanded="false" />
-            <element signature="method#Member#2;class#Member#0" expanded="false" />
-            <element signature="docComment;method#Member#3;class#Member#0" expanded="false" />
-            <element signature="method#Member#3;class#Member#0" expanded="false" />
-            <element signature="docComment;method#Member#4;class#Member#0" expanded="false" />
-            <element signature="method#Member#5;class#Member#0" expanded="false" />
-            <element signature="docComment;method#setDateOfBirth#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#setDateOfDeath#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#addSpouse#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#addChild#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#addParent#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#addSibling#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#addNote#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#setImage#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#getName#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#getDateOfBirth#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#getDateOfDeath#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#getSpouse#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#getChildren#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#getParents#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#getSiblings#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#getExtraNotes#0;class#Member#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Relationship.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -557,33 +543,54 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#membership#0;class#Member#0" expanded="false" />
+            <element signature="class#Membership#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#0;class#Member#0" expanded="false" />
-            <element signature="method#Member#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#1;class#Member#0" expanded="false" />
-            <element signature="method#Member#1;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#2;class#Member#0" expanded="false" />
-            <element signature="method#Member#2;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#3;class#Member#0" expanded="false" />
             <element signature="method#Member#3;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#4;class#Member#0" expanded="false" />
             <element signature="method#Member#5;class#Member#0" expanded="false" />
             <element signature="docComment;method#setDateOfBirth#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#setDateOfDeath#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#addSpouse#0;class#Member#0" expanded="false" />
+            <element signature="e#5454#5455#0" expanded="true" />
+            <element signature="e#5493#5494#0" expanded="true" />
             <element signature="docComment;method#addChild#0;class#Member#0" expanded="false" />
+            <element signature="e#5623#5624#0" expanded="true" />
+            <element signature="e#5663#5664#0" expanded="true" />
             <element signature="docComment;method#addParent#0;class#Member#0" expanded="false" />
+            <element signature="e#5784#5785#0" expanded="true" />
+            <element signature="e#5824#5825#0" expanded="true" />
             <element signature="docComment;method#addSibling#0;class#Member#0" expanded="false" />
+            <element signature="e#5950#5951#0" expanded="true" />
+            <element signature="e#5992#5993#0" expanded="true" />
             <element signature="docComment;method#addNote#0;class#Member#0" expanded="false" />
+            <element signature="e#6108#6109#0" expanded="true" />
+            <element signature="e#6149#6150#0" expanded="true" />
             <element signature="docComment;method#setImage#0;class#Member#0" expanded="false" />
+            <element signature="e#6262#6263#0" expanded="true" />
+            <element signature="e#6296#6297#0" expanded="true" />
             <element signature="docComment;method#getName#0;class#Member#0" expanded="false" />
+            <element signature="e#6392#6393#0" expanded="true" />
+            <element signature="e#6424#6425#0" expanded="true" />
             <element signature="docComment;method#getDateOfBirth#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#getDateOfDeath#0;class#Member#0" expanded="false" />
+            <element signature="e#6810#6811#0" expanded="true" />
             <element signature="docComment;method#getSpouse#0;class#Member#0" expanded="false" />
+            <element signature="e#6925#6926#0" expanded="true" />
+            <element signature="e#6954#6955#0" expanded="true" />
             <element signature="docComment;method#getChildren#0;class#Member#0" expanded="false" />
+            <element signature="e#7063#7064#0" expanded="true" />
+            <element signature="e#7094#7095#0" expanded="true" />
             <element signature="docComment;method#getParents#0;class#Member#0" expanded="false" />
+            <element signature="e#7208#7209#0" expanded="true" />
+            <element signature="e#7238#7239#0" expanded="true" />
             <element signature="docComment;method#getSiblings#0;class#Member#0" expanded="false" />
+            <element signature="e#7355#7356#0" expanded="true" />
+            <element signature="e#7386#7387#0" expanded="true" />
             <element signature="docComment;method#getExtraNotes#0;class#Member#0" expanded="false" />
+            <element signature="e#7509#7510#0" expanded="true" />
+            <element signature="e#7542#7543#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -592,9 +599,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="40" column="9" lean-forward="false" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -635,33 +639,54 @@
           <caret line="106" column="62" lean-forward="false" selection-start-line="106" selection-start-column="62" selection-end-line="106" selection-end-column="62" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#membership#0;class#Member#0" expanded="false" />
+            <element signature="class#Membership#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#0;class#Member#0" expanded="false" />
-            <element signature="method#Member#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#1;class#Member#0" expanded="false" />
-            <element signature="method#Member#1;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#2;class#Member#0" expanded="false" />
-            <element signature="method#Member#2;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#3;class#Member#0" expanded="false" />
             <element signature="method#Member#3;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#4;class#Member#0" expanded="false" />
             <element signature="method#Member#5;class#Member#0" expanded="false" />
             <element signature="docComment;method#setDateOfBirth#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#setDateOfDeath#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#addSpouse#0;class#Member#0" expanded="false" />
+            <element signature="e#5454#5455#0" expanded="true" />
+            <element signature="e#5493#5494#0" expanded="true" />
             <element signature="docComment;method#addChild#0;class#Member#0" expanded="false" />
+            <element signature="e#5623#5624#0" expanded="true" />
+            <element signature="e#5663#5664#0" expanded="true" />
             <element signature="docComment;method#addParent#0;class#Member#0" expanded="false" />
+            <element signature="e#5784#5785#0" expanded="true" />
+            <element signature="e#5824#5825#0" expanded="true" />
             <element signature="docComment;method#addSibling#0;class#Member#0" expanded="false" />
+            <element signature="e#5950#5951#0" expanded="true" />
+            <element signature="e#5992#5993#0" expanded="true" />
             <element signature="docComment;method#addNote#0;class#Member#0" expanded="false" />
+            <element signature="e#6108#6109#0" expanded="true" />
+            <element signature="e#6149#6150#0" expanded="true" />
             <element signature="docComment;method#setImage#0;class#Member#0" expanded="false" />
+            <element signature="e#6262#6263#0" expanded="true" />
+            <element signature="e#6296#6297#0" expanded="true" />
             <element signature="docComment;method#getName#0;class#Member#0" expanded="false" />
+            <element signature="e#6392#6393#0" expanded="true" />
+            <element signature="e#6424#6425#0" expanded="true" />
             <element signature="docComment;method#getDateOfBirth#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#getDateOfDeath#0;class#Member#0" expanded="false" />
+            <element signature="e#6810#6811#0" expanded="true" />
             <element signature="docComment;method#getSpouse#0;class#Member#0" expanded="false" />
+            <element signature="e#6925#6926#0" expanded="true" />
+            <element signature="e#6954#6955#0" expanded="true" />
             <element signature="docComment;method#getChildren#0;class#Member#0" expanded="false" />
+            <element signature="e#7063#7064#0" expanded="true" />
+            <element signature="e#7094#7095#0" expanded="true" />
             <element signature="docComment;method#getParents#0;class#Member#0" expanded="false" />
+            <element signature="e#7208#7209#0" expanded="true" />
+            <element signature="e#7238#7239#0" expanded="true" />
             <element signature="docComment;method#getSiblings#0;class#Member#0" expanded="false" />
+            <element signature="e#7355#7356#0" expanded="true" />
+            <element signature="e#7386#7387#0" expanded="true" />
             <element signature="docComment;method#getExtraNotes#0;class#Member#0" expanded="false" />
+            <element signature="e#7509#7510#0" expanded="true" />
+            <element signature="e#7542#7543#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -670,9 +695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="40" column="9" lean-forward="true" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -713,33 +735,54 @@
           <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#membership#0;class#Member#0" expanded="false" />
+            <element signature="class#Membership#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#0;class#Member#0" expanded="false" />
-            <element signature="method#Member#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#1;class#Member#0" expanded="false" />
-            <element signature="method#Member#1;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#2;class#Member#0" expanded="false" />
-            <element signature="method#Member#2;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#3;class#Member#0" expanded="false" />
             <element signature="method#Member#3;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#4;class#Member#0" expanded="false" />
             <element signature="method#Member#5;class#Member#0" expanded="false" />
             <element signature="docComment;method#setDateOfBirth#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#setDateOfDeath#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#addSpouse#0;class#Member#0" expanded="false" />
+            <element signature="e#5454#5455#0" expanded="true" />
+            <element signature="e#5493#5494#0" expanded="true" />
             <element signature="docComment;method#addChild#0;class#Member#0" expanded="false" />
+            <element signature="e#5623#5624#0" expanded="true" />
+            <element signature="e#5663#5664#0" expanded="true" />
             <element signature="docComment;method#addParent#0;class#Member#0" expanded="false" />
+            <element signature="e#5784#5785#0" expanded="true" />
+            <element signature="e#5824#5825#0" expanded="true" />
             <element signature="docComment;method#addSibling#0;class#Member#0" expanded="false" />
+            <element signature="e#5950#5951#0" expanded="true" />
+            <element signature="e#5992#5993#0" expanded="true" />
             <element signature="docComment;method#addNote#0;class#Member#0" expanded="false" />
+            <element signature="e#6108#6109#0" expanded="true" />
+            <element signature="e#6149#6150#0" expanded="true" />
             <element signature="docComment;method#setImage#0;class#Member#0" expanded="false" />
+            <element signature="e#6262#6263#0" expanded="true" />
+            <element signature="e#6296#6297#0" expanded="true" />
             <element signature="docComment;method#getName#0;class#Member#0" expanded="false" />
+            <element signature="e#6392#6393#0" expanded="true" />
+            <element signature="e#6424#6425#0" expanded="true" />
             <element signature="docComment;method#getDateOfBirth#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#getDateOfDeath#0;class#Member#0" expanded="false" />
+            <element signature="e#6810#6811#0" expanded="true" />
             <element signature="docComment;method#getSpouse#0;class#Member#0" expanded="false" />
+            <element signature="e#6925#6926#0" expanded="true" />
+            <element signature="e#6954#6955#0" expanded="true" />
             <element signature="docComment;method#getChildren#0;class#Member#0" expanded="false" />
+            <element signature="e#7063#7064#0" expanded="true" />
+            <element signature="e#7094#7095#0" expanded="true" />
             <element signature="docComment;method#getParents#0;class#Member#0" expanded="false" />
+            <element signature="e#7208#7209#0" expanded="true" />
+            <element signature="e#7238#7239#0" expanded="true" />
             <element signature="docComment;method#getSiblings#0;class#Member#0" expanded="false" />
+            <element signature="e#7355#7356#0" expanded="true" />
+            <element signature="e#7386#7387#0" expanded="true" />
             <element signature="docComment;method#getExtraNotes#0;class#Member#0" expanded="false" />
+            <element signature="e#7509#7510#0" expanded="true" />
+            <element signature="e#7542#7543#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -755,7 +798,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -771,7 +813,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -787,7 +828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -814,33 +854,54 @@
           <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#membership#0;class#Member#0" expanded="false" />
+            <element signature="class#Membership#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#0;class#Member#0" expanded="false" />
-            <element signature="method#Member#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#1;class#Member#0" expanded="false" />
-            <element signature="method#Member#1;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#2;class#Member#0" expanded="false" />
-            <element signature="method#Member#2;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#3;class#Member#0" expanded="false" />
             <element signature="method#Member#3;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#4;class#Member#0" expanded="false" />
             <element signature="method#Member#5;class#Member#0" expanded="false" />
             <element signature="docComment;method#setDateOfBirth#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#setDateOfDeath#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#addSpouse#0;class#Member#0" expanded="false" />
+            <element signature="e#5454#5455#0" expanded="true" />
+            <element signature="e#5493#5494#0" expanded="true" />
             <element signature="docComment;method#addChild#0;class#Member#0" expanded="false" />
+            <element signature="e#5623#5624#0" expanded="true" />
+            <element signature="e#5663#5664#0" expanded="true" />
             <element signature="docComment;method#addParent#0;class#Member#0" expanded="false" />
+            <element signature="e#5784#5785#0" expanded="true" />
+            <element signature="e#5824#5825#0" expanded="true" />
             <element signature="docComment;method#addSibling#0;class#Member#0" expanded="false" />
+            <element signature="e#5950#5951#0" expanded="true" />
+            <element signature="e#5992#5993#0" expanded="true" />
             <element signature="docComment;method#addNote#0;class#Member#0" expanded="false" />
+            <element signature="e#6108#6109#0" expanded="true" />
+            <element signature="e#6149#6150#0" expanded="true" />
             <element signature="docComment;method#setImage#0;class#Member#0" expanded="false" />
+            <element signature="e#6262#6263#0" expanded="true" />
+            <element signature="e#6296#6297#0" expanded="true" />
             <element signature="docComment;method#getName#0;class#Member#0" expanded="false" />
+            <element signature="e#6392#6393#0" expanded="true" />
+            <element signature="e#6424#6425#0" expanded="true" />
             <element signature="docComment;method#getDateOfBirth#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#getDateOfDeath#0;class#Member#0" expanded="false" />
+            <element signature="e#6810#6811#0" expanded="true" />
             <element signature="docComment;method#getSpouse#0;class#Member#0" expanded="false" />
+            <element signature="e#6925#6926#0" expanded="true" />
+            <element signature="e#6954#6955#0" expanded="true" />
             <element signature="docComment;method#getChildren#0;class#Member#0" expanded="false" />
+            <element signature="e#7063#7064#0" expanded="true" />
+            <element signature="e#7094#7095#0" expanded="true" />
             <element signature="docComment;method#getParents#0;class#Member#0" expanded="false" />
+            <element signature="e#7208#7209#0" expanded="true" />
+            <element signature="e#7238#7239#0" expanded="true" />
             <element signature="docComment;method#getSiblings#0;class#Member#0" expanded="false" />
+            <element signature="e#7355#7356#0" expanded="true" />
+            <element signature="e#7386#7387#0" expanded="true" />
             <element signature="docComment;method#getExtraNotes#0;class#Member#0" expanded="false" />
+            <element signature="e#7509#7510#0" expanded="true" />
+            <element signature="e#7542#7543#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -856,7 +917,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -872,7 +932,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -888,7 +947,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -915,33 +973,54 @@
           <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="class#membership#0;class#Member#0" expanded="false" />
+            <element signature="class#Membership#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#0;class#Member#0" expanded="false" />
-            <element signature="method#Member#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#1;class#Member#0" expanded="false" />
-            <element signature="method#Member#1;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#2;class#Member#0" expanded="false" />
-            <element signature="method#Member#2;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#3;class#Member#0" expanded="false" />
             <element signature="method#Member#3;class#Member#0" expanded="false" />
             <element signature="docComment;method#Member#4;class#Member#0" expanded="false" />
             <element signature="method#Member#5;class#Member#0" expanded="false" />
             <element signature="docComment;method#setDateOfBirth#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#setDateOfDeath#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#addSpouse#0;class#Member#0" expanded="false" />
+            <element signature="e#5454#5455#0" expanded="true" />
+            <element signature="e#5493#5494#0" expanded="true" />
             <element signature="docComment;method#addChild#0;class#Member#0" expanded="false" />
+            <element signature="e#5623#5624#0" expanded="true" />
+            <element signature="e#5663#5664#0" expanded="true" />
             <element signature="docComment;method#addParent#0;class#Member#0" expanded="false" />
+            <element signature="e#5784#5785#0" expanded="true" />
+            <element signature="e#5824#5825#0" expanded="true" />
             <element signature="docComment;method#addSibling#0;class#Member#0" expanded="false" />
+            <element signature="e#5950#5951#0" expanded="true" />
+            <element signature="e#5992#5993#0" expanded="true" />
             <element signature="docComment;method#addNote#0;class#Member#0" expanded="false" />
+            <element signature="e#6108#6109#0" expanded="true" />
+            <element signature="e#6149#6150#0" expanded="true" />
             <element signature="docComment;method#setImage#0;class#Member#0" expanded="false" />
+            <element signature="e#6262#6263#0" expanded="true" />
+            <element signature="e#6296#6297#0" expanded="true" />
             <element signature="docComment;method#getName#0;class#Member#0" expanded="false" />
+            <element signature="e#6392#6393#0" expanded="true" />
+            <element signature="e#6424#6425#0" expanded="true" />
             <element signature="docComment;method#getDateOfBirth#0;class#Member#0" expanded="false" />
             <element signature="docComment;method#getDateOfDeath#0;class#Member#0" expanded="false" />
+            <element signature="e#6810#6811#0" expanded="true" />
             <element signature="docComment;method#getSpouse#0;class#Member#0" expanded="false" />
+            <element signature="e#6925#6926#0" expanded="true" />
+            <element signature="e#6954#6955#0" expanded="true" />
             <element signature="docComment;method#getChildren#0;class#Member#0" expanded="false" />
+            <element signature="e#7063#7064#0" expanded="true" />
+            <element signature="e#7094#7095#0" expanded="true" />
             <element signature="docComment;method#getParents#0;class#Member#0" expanded="false" />
+            <element signature="e#7208#7209#0" expanded="true" />
+            <element signature="e#7238#7239#0" expanded="true" />
             <element signature="docComment;method#getSiblings#0;class#Member#0" expanded="false" />
+            <element signature="e#7355#7356#0" expanded="true" />
+            <element signature="e#7386#7387#0" expanded="true" />
             <element signature="docComment;method#getExtraNotes#0;class#Member#0" expanded="false" />
+            <element signature="e#7509#7510#0" expanded="true" />
+            <element signature="e#7542#7543#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -957,7 +1036,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -973,7 +1051,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -989,7 +1066,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1014,7 +1090,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="16" lean-forward="false" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1022,7 +1097,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="28" lean-forward="false" selection-start-line="2" selection-start-column="28" selection-end-line="2" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1031,7 +1105,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="1" lean-forward="false" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1049,50 +1122,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Member.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="256" column="1" lean-forward="false" selection-start-line="256" selection-start-column="1" selection-end-line="256" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="class#membership#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#Member#0;class#Member#0" expanded="false" />
-            <element signature="method#Member#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#Member#1;class#Member#0" expanded="false" />
-            <element signature="method#Member#1;class#Member#0" expanded="false" />
-            <element signature="docComment;method#Member#2;class#Member#0" expanded="false" />
-            <element signature="method#Member#2;class#Member#0" expanded="false" />
-            <element signature="docComment;method#Member#3;class#Member#0" expanded="false" />
-            <element signature="method#Member#3;class#Member#0" expanded="false" />
-            <element signature="docComment;method#Member#4;class#Member#0" expanded="false" />
-            <element signature="method#Member#5;class#Member#0" expanded="false" />
-            <element signature="docComment;method#setDateOfBirth#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#setDateOfDeath#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#addSpouse#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#addChild#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#addParent#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#addSibling#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#addNote#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#setImage#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#getName#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#getDateOfBirth#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#getDateOfDeath#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#getSpouse#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#getChildren#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#getParents#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#getSiblings#0;class#Member#0" expanded="false" />
-            <element signature="docComment;method#getExtraNotes#0;class#Member#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Name.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="40" column="9" lean-forward="false" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1103,10 +1136,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../../UBC/CPEN 221/Machine Problems/MP 3/f17-mp3-Penjiboy/src/main/java/ca/ubc/ece/cpen221/mp3/graph/AdjacencyListGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../../UBC/CPEN 221/Machine Problems/MP 3/f17-mp3-Penjiboy/src/main/java/ca/ubc/ece/cpen221/mp3/graph/Algorithms.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Family Tree.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Date.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="816">
-          <caret line="99" column="7" lean-forward="true" selection-start-line="99" selection-start-column="7" selection-end-line="99" selection-end-column="7" />
+        <state relative-caret-position="1008">
+          <caret line="99" column="7" lean-forward="false" selection-start-line="99" selection-start-column="7" selection-end-line="99" selection-end-column="7" />
           <folding>
             <element signature="method#Date#0;class#Date#0" expanded="false" />
             <element signature="method#Date#1;class#Date#0" expanded="false" />
@@ -1120,35 +1174,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Relationship.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Storage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="126">
           <caret line="6" column="105" lean-forward="false" selection-start-line="6" selection-start-column="105" selection-end-line="6" selection-end-column="105" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../UBC/CPEN 221/Machine Problems/MP 3/f17-mp3-Penjiboy/src/main/java/ca/ubc/ece/cpen221/mp3/graph/AdjacencyListGraph.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Relationship.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="483">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../../../UBC/CPEN 221/Machine Problems/MP 3/f17-mp3-Penjiboy/src/main/java/ca/ubc/ece/cpen221/mp3/graph/Algorithms.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/Member.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="722">
+          <caret line="248" column="31" lean-forward="false" selection-start-line="248" selection-start-column="31" selection-end-line="248" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#Membership#0;class#Member#0" expanded="false" />
+            <element signature="docComment;method#Member#0;class#Member#0" expanded="false" />
+            <element signature="docComment;method#Member#1;class#Member#0" expanded="false" />
+            <element signature="docComment;method#Member#2;class#Member#0" expanded="false" />
+            <element signature="docComment;method#Member#3;class#Member#0" expanded="false" />
+            <element signature="method#Member#3;class#Member#0" expanded="false" />
+            <element signature="docComment;method#Member#4;class#Member#0" expanded="false" />
+            <element signature="method#Member#5;class#Member#0" expanded="false" />
+            <element signature="docComment;method#setDateOfBirth#0;class#Member#0" expanded="false" />
+            <element signature="docComment;method#addSpouse#0;class#Member#0" expanded="false" />
+            <element signature="e#5454#5455#0" expanded="true" />
+            <element signature="e#5493#5494#0" expanded="true" />
+            <element signature="docComment;method#addChild#0;class#Member#0" expanded="false" />
+            <element signature="e#5623#5624#0" expanded="true" />
+            <element signature="e#5663#5664#0" expanded="true" />
+            <element signature="docComment;method#addParent#0;class#Member#0" expanded="false" />
+            <element signature="e#5784#5785#0" expanded="true" />
+            <element signature="e#5824#5825#0" expanded="true" />
+            <element signature="docComment;method#addSibling#0;class#Member#0" expanded="false" />
+            <element signature="e#5950#5951#0" expanded="true" />
+            <element signature="e#5992#5993#0" expanded="true" />
+            <element signature="docComment;method#addNote#0;class#Member#0" expanded="false" />
+            <element signature="e#6108#6109#0" expanded="true" />
+            <element signature="e#6149#6150#0" expanded="true" />
+            <element signature="docComment;method#setImage#0;class#Member#0" expanded="false" />
+            <element signature="e#6262#6263#0" expanded="true" />
+            <element signature="e#6296#6297#0" expanded="true" />
+            <element signature="docComment;method#getName#0;class#Member#0" expanded="false" />
+            <element signature="e#6392#6393#0" expanded="true" />
+            <element signature="e#6424#6425#0" expanded="true" />
+            <element signature="docComment;method#getDateOfBirth#0;class#Member#0" expanded="false" />
+            <element signature="docComment;method#getDateOfDeath#0;class#Member#0" expanded="false" />
+            <element signature="e#6810#6811#0" expanded="true" />
+            <element signature="docComment;method#getSpouse#0;class#Member#0" expanded="false" />
+            <element signature="e#6925#6926#0" expanded="true" />
+            <element signature="e#6954#6955#0" expanded="true" />
+            <element signature="docComment;method#getChildren#0;class#Member#0" expanded="false" />
+            <element signature="e#7063#7064#0" expanded="true" />
+            <element signature="e#7094#7095#0" expanded="true" />
+            <element signature="docComment;method#getParents#0;class#Member#0" expanded="false" />
+            <element signature="e#7208#7209#0" expanded="true" />
+            <element signature="e#7238#7239#0" expanded="true" />
+            <element signature="docComment;method#getSiblings#0;class#Member#0" expanded="false" />
+            <element signature="e#7355#7356#0" expanded="true" />
+            <element signature="e#7386#7387#0" expanded="true" />
+            <element signature="docComment;method#getExtraNotes#0;class#Member#0" expanded="false" />
+            <element signature="e#7509#7510#0" expanded="true" />
+            <element signature="e#7542#7543#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
