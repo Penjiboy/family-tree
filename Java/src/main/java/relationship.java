@@ -7,4 +7,12 @@ package main.java;
  * through relationships.
  */
 public class Relationship {
+    /**
+     * Relation enumeration, where we define the possible relationships from person A to person B
+     */
+    public enum relation {
+        brother, sister, sibling, cousin, halfBrother, halfSister,
+        mother, father, grandFather, grandMother, son, daughter, grandSon, grandDaughter,
+        uncle, aunt, nephew, niece, 
+    }
 }
