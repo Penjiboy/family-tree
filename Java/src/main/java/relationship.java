@@ -18,7 +18,7 @@ public class Relationship {
      */
     public enum Relation {
         brother, sister, sibling, cousin, halfBrother, halfSister,
-        mother, father, grandFather, grandMother, son, daughter, grandSon, grandDaughter,
+        mother, father, grandFather, grandMother, son, daughter, grandSon, grandDaughter, grandParent,
         uncle, aunt, nephew, niece,
         husband, wife,
         stepMother, stepFather, stepBrother, stepSister, stepSon, stepDaughter,
