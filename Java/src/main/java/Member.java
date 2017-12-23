@@ -5,16 +5,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Member {
-    public Name name;
-    public Date dateOfBirth;
-    public Date dateOfDeath;
-    public Gender gender;
-    public List<Member> spouse = new ArrayList<Member>();
-    public List<Member> children = new ArrayList<Member>();
-    public List<Member> parents = new ArrayList<Member>();
-    public List<Member> siblings = new ArrayList<Member>();
-    public List<String> extraNotes = new ArrayList<String>();
-    public File image;
+    private Name name;
+    private Date dateOfBirth;
+    private Date dateOfDeath;
+    private Gender gender;
+    private List<Member> spouse = new ArrayList<Member>();
+    private List<Member> children = new ArrayList<Member>();
+    private List<Member> parents = new ArrayList<Member>();
+    private List<Member> siblings = new ArrayList<Member>();
+    private List<String> extraNotes = new ArrayList<String>();
+    private File image;
     public Membership membershipStatus;
 
     public enum Membership {
@@ -308,5 +308,13 @@ public class Member {
      */
     public List<String> getExtraNotes() {
         return extraNotes;
+    }
+
+    /**
+     * get image file
+     * @return image file
+     */
+    public File getImage() {
+        return image;
     }
 }
