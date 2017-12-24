@@ -74,17 +74,20 @@ public class Relationship {
      * @return true if memberB exists on the same level as memberA, false otherwise
      */
     private boolean checkCurrentRow(Stack<RelationDirection> currentState) {
-        boolean success = false;
         //Check direct siblings
         Set<Member> results = memberA.getSiblings().parallelStream().filter(member -> member.equals(this.memberB))
                 .collect(Collectors.toSet());
         if(!results.isEmpty())
             return true;
+
+        //check cousins. I.e. look at parents' siblings' children
         results = memberA.getParents().parallelStream().filter(member -> member.getSiblings()
-                .parallelStream().filter(member1 -> member1.getChildren()
-                        .parallelStream().filter(member2 -> member2.equals(memberB)).collect(Collectors.toSet()))
-                .collect(Collectors.toSet()))
+                .parallelStream().filter(member1 -> !member1.getChildren()
+                        .parallelStream().filter(member2 -> !member2.equals(memberB)).collect(Collectors.toSet()).isEmpty())
+                .collect(Collectors.toSet()).isEmpty())
                 .collect(Collectors.toSet());
+        return !results.isEmpty();
+
     }
 
     /**
