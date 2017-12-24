@@ -1,6 +1,8 @@
 package main.java;
 
+import java.util.Set;
 import java.util.Stack;
+import java.util.stream.Collectors;
 
 /**
  * Relationship class that ties one member to another. There is a relationship from member A to member B. Once this is
@@ -71,23 +73,35 @@ public class Relationship {
      * checks if memberB exists on the same level as member A
      * @return true if memberB exists on the same level as memberA, false otherwise
      */
-    private boolean checkCurrentRow() {
+    private boolean checkCurrentRow(Stack<RelationDirection> currentState) {
+        boolean success = false;
+        //Check direct siblings
+        Set<Member> results = memberA.getSiblings().parallelStream().filter(member -> member.equals(this.memberB))
+                .collect(Collectors.toSet());
+        if(!results.isEmpty())
+            return true;
+        results = memberA.getParents().parallelStream().filter(member -> member.getSiblings()
+                .parallelStream().filter(member1 -> member1.getChildren()
+                        .parallelStream().filter(member2 -> member2.equals(memberB)).collect(Collectors.toSet()))
+                .collect(Collectors.toSet()))
+                .collect(Collectors.toSet());
+    }
+
+    /**
+     * Check if memberB exists on a row above memberA
+     * @param currentState of how many rows have been searched so far
+     * @return true if memberB exists on a row above memberA
+     */
+    private boolean checkUpstream(Stack<RelationDirection> currentState) {
 
     }
 
     /**
-     * Check if memberB exists on the row above memberA
-     * @return true if memberB exists on the row above memberA
+     * Check if memberB exists on a row below memberA
+     * @param currentState of how many rows have been searched so far
+     * @return true if memberB exists on a row below memberA
      */
-    private boolean checkRowAbove() {
-
-    }
-
-    /**
-     * Check if memberB exists on the row below memberA
-     * @return true if memberB exists on the row below memberA
-     */
-    private boolean checkRowBelow() {
+    private boolean checkDownstream(Stack<RelationDirection> currentState) {
 
     }
 
