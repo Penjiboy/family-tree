@@ -1,5 +1,7 @@
 package main.java;
 
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.Stack;
 import java.util.stream.Collectors;
@@ -52,20 +54,16 @@ public class Relationship {
 
     /**
      * determines the relationship between memberA and memberB and returns a new relation value
-     * @param memberA
-     * @param memberB
      * @return relationship between memberA and memberB
      */
-    public Relation determineRelationship(Member memberA, Member memberB) {
+    public Relation determineRelationship() {
         //Current idea is to use a breadthFirst search type algorithm, get a linked list setup, check each member in the
         //direct connections, then check the next level of members until either we find the member or we run out of
         //members
         //Still need to find a way to trace back the connection, and then to identify what type of relationship it is
         //How about
 
-        this.memberA = memberA;
-        this.memberB = memberB;
-
+        boolean test = checkCurrentRow(); //remove this
         return null; //change this
     }
 
@@ -73,7 +71,7 @@ public class Relationship {
      * checks if memberB exists on the same level as member A
      * @return true if memberB exists on the same level as memberA, false otherwise
      */
-    private boolean checkCurrentRow(Stack<RelationDirection> currentState) {
+    private boolean checkCurrentRow() {
         //Check direct siblings
         Set<Member> results = memberA.getSiblings().parallelStream().filter(member -> member.equals(this.memberB))
                 .collect(Collectors.toSet());
@@ -81,13 +79,16 @@ public class Relationship {
             return true;
 
         //check cousins. I.e. look at parents' siblings' children
-        results = memberA.getParents().parallelStream().filter(member -> member.getSiblings()
-                .parallelStream().filter(member1 -> !member1.getChildren()
-                        .parallelStream().filter(member2 -> !member2.equals(memberB)).collect(Collectors.toSet()).isEmpty())
-                .collect(Collectors.toSet()).isEmpty())
+        Set<Member> workingResultsSet = new HashSet<Member>();
+        for(Member parent: memberA.getParents()) {
+            for(Member parentSibling: parent.getSiblings()) {
+                workingResultsSet.addAll(parentSibling.getChildren());
+            }
+        }
+        results = workingResultsSet.parallelStream()
+                .filter(member -> member.equals(memberB))
                 .collect(Collectors.toSet());
         return !results.isEmpty();
-
     }
 
     /**
@@ -96,7 +97,7 @@ public class Relationship {
      * @return true if memberB exists on a row above memberA
      */
     private boolean checkUpstream(Stack<RelationDirection> currentState) {
-
+        return false; //change this
     }
 
     /**
@@ -105,7 +106,7 @@ public class Relationship {
      * @return true if memberB exists on a row below memberA
      */
     private boolean checkDownstream(Stack<RelationDirection> currentState) {
-
+        return false; //change this
     }
 
 }

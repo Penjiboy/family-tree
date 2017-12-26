@@ -150,10 +150,12 @@ public class Member {
         else {
             if(!(this.name.equals(((Member) other).name)))
                 return false;
-            if(!(this.dateOfBirth.equals(((Member) other).dateOfBirth)))
-                return false;
-            if(!(this.gender.equals(((Member) other).gender)))
-                return false;
+            try {
+                if (!(this.dateOfBirth.equals(((Member) other).dateOfBirth)))
+                    return false;
+                if (!(this.gender.equals(((Member) other).gender)))
+                    return false;
+            } catch (Exception e) {}
             return true;
         }
     }
