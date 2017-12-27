@@ -70,7 +70,7 @@ public class Relationship {
         else checkOtherRows(trackingProgress, RelationDirection.down);
 
         //TODO: Determine relationship
-        Set<Member> result = new HashSet<Member>();
+        Set<Member> result;
         //classify as sibling or cousin
         if(trackingProgress.isEmpty()) {
             //check if direct sibling
@@ -78,7 +78,13 @@ public class Relationship {
                     .filter(member -> member.equals(memberB))
                     .collect(Collectors.toSet());
             if(!result.isEmpty()) {
-                
+                //check if it's a male or female\
+                Member sibling;
+                Relation relation;
+                for(Member member: result) sibling = member;
+                try{
+                    
+                }
             }
         }
 
