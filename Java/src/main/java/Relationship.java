@@ -63,13 +63,24 @@ public class Relationship {
         //Still need to find a way to trace back the connection, and then to identify what type of relationship it is
         //How about
 
-        Stack<RelationDirection> trackingProgress = new Stack<RelationDirection>(); //mutable
+        Stack<RelationDirection> trackingProgress = new Stack<RelationDirection>();
 
         if(checkCurrentRow(memberA)) {}
         else if(checkOtherRows(trackingProgress, RelationDirection.up)) {}
         else checkOtherRows(trackingProgress, RelationDirection.down);
 
         //TODO: Determine relationship
+        Set<Member> result = new HashSet<Member>();
+        //classify as sibling or cousin
+        if(trackingProgress.isEmpty()) {
+            //check if direct sibling
+            result = memberA.getSiblings().parallelStream()
+                    .filter(member -> member.equals(memberB))
+                    .collect(Collectors.toSet());
+            if(!result.isEmpty()) {
+                
+            }
+        }
 
         return null; //change this
     }
@@ -140,6 +151,7 @@ public class Relationship {
             else
                 memberOfCurrentState = memberA.getChildren().get(0);
         } catch(IndexOutOfBoundsException aioobe) { //if there's no parent or child, then stop checking
+            currentState.clear();
             return false;
         }
         boolean notFound = true; //flag that checks whether a member has been found on the level or not
@@ -174,51 +186,8 @@ public class Relationship {
         }
         else { //might want to change this
             currentState.clear();
-            return false; //change this
+            return false;
         }
     }
 
-    /**
-     * Check if memberB exists on a row below memberA
-     * @param currentState of how many rows have been searched so far
-     * @return true if memberB exists on a row below memberA
-     */
-/*    private boolean checkDownstream(Stack<RelationDirection> currentState) {
-        currentState.push(RelationDirection.down);
-        Member memberOfCurrentState;
-        try {
-            memberOfCurrentState = memberA.getChildren().get(0);
-        } catch(ArrayIndexOutOfBoundsException aioobe) { //if there's no parent, then stop checking upstream
-            return false;
-        }
-        boolean notFound = true; //flag that checks whether a member has been found on the level or not
-        boolean noMoreMembers = false; //flag that checks whether there are any more members upstream
-
-        //while loop to check a level, if the member is not found, we continue going up, until a member is found
-        //or we cannot go any further up
-        while(notFound && !noMoreMembers) {
-            notFound = !checkCurrentRow(memberOfCurrentState);
-            if(notFound) {
-                currentState.push(RelationDirection.down);
-                try {
-                    memberOfCurrentState = memberOfCurrentState.getChildren().get(0);
-                } catch (ArrayIndexOutOfBoundsException aioobe) {
-                    noMoreMembers = true;
-                }
-            }
-        }
-
-        //perhaps some redundant code in here
-        if((!notFound) && (!noMoreMembers))
-            return true;
-        else if((notFound) && (noMoreMembers)) {
-            currentState.clear();
-            return false;
-        }
-        else { //might want to change this
-            currentState.clear();
-            return false; //change this
-        }
-    }
-*/
 }
