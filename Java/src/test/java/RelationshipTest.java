@@ -23,4 +23,6 @@ public class RelationshipTest {
         Relationship sameLevel = new Relationship(me, momsBrothersSon);
         sameLevel.determineRelationship();
     }
+
+
 }

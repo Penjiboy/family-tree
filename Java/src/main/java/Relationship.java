@@ -38,7 +38,7 @@ public class Relationship {
      * RelationDirection, i.e. vertical would be e.g. father to son, horizontal would be e.g. brother to sister
      */
     private enum RelationDirection {
-        horizontal, vertical
+        up, down
     }
 
 
@@ -62,6 +62,12 @@ public class Relationship {
         //members
         //Still need to find a way to trace back the connection, and then to identify what type of relationship it is
         //How about
+
+        Stack<RelationDirection> trackingProgress = new Stack<RelationDirection>(); //mutable
+
+        if(checkCurrentRow());
+        else if(checkUpstream(trackingProgress));
+        else checkDownstream(trackingProgress);
 
         boolean test = checkCurrentRow(); //remove this
         return null; //change this
@@ -97,7 +103,35 @@ public class Relationship {
      * @return true if memberB exists on a row above memberA
      */
     private boolean checkUpstream(Stack<RelationDirection> currentState) {
-        return false; //change this
+        currentState.push(RelationDirection.up);
+        try {
+            Member memberOfCurrentState = memberA.getParents().get(0);
+        } catch(ArrayIndexOutOfBoundsException aioobe) { //if there's no parent, then stop checking upstream
+            return false;
+        }
+        boolean notFound = true; //flag that checks whether a member has been found on the level or not
+        boolean noMoreMembers = false; //flag that checks whether there are any more members upstream
+
+        //while loop to check a level, if the member is not found, we continue going up, until a member is found
+        //or we cannot go any further up
+        while(notFound && !noMoreMembers) {
+            int count = 0;
+
+            //while loop to get us onto the desired level, depending on the current state
+            while(count < currentState.size()) {
+                //TODO: Continue here
+                memberA.getParents()
+                count++;
+            }
+        }
+
+        if((!notFound) && (!noMoreMembers))
+            return true;
+        else if((notFound) && (noMoreMembers))
+            return false;
+        else { //might want to change this
+            return false; //change this
+        }
     }
 
     /**
