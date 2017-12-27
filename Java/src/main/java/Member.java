@@ -200,7 +200,10 @@ public class Member {
      * @param spouse
      */
     public void addSpouse(Member spouse) {
-        this.spouse.add(spouse);
+        if(!this.getSpouse().contains(spouse)) {
+            this.spouse.add(spouse);
+            spouse.addSpouse(this);
+        }
     }
 
     /**
@@ -209,7 +212,10 @@ public class Member {
      * @param child
      */
     public void addChild(Member child) {
-        this.children.add(child);
+        if(!this.getChildren().contains(child)) {
+            this.children.add(child);
+            child.addParent(this);
+        }
     }
 
     /**
@@ -217,7 +223,10 @@ public class Member {
      * @param parent
      */
     public void addParent(Member parent) {
-        this.parents.add(parent);
+        if(!this.getParents().contains(parent)) {
+            this.parents.add(parent);
+            parent.addChild(this);
+        }
     }
 
     /**
@@ -225,7 +234,10 @@ public class Member {
      * @param sibling
      */
     public void addSibling(Member sibling) {
-        this.siblings.add(sibling);
+        if(!this.getSiblings().contains(sibling)) {
+            this.siblings.add(sibling);
+            sibling.addSibling(this);
+        }
     }
 
     /**

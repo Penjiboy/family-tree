@@ -65,13 +65,12 @@ public class Relationship {
 
         Stack<RelationDirection> trackingProgress = new Stack<RelationDirection>(); //mutable
 
-        if(checkCurrentRow(memberA));
-        else if(checkOtherRows(trackingProgress, RelationDirection.up));
+        if(checkCurrentRow(memberA)) {}
+        else if(checkOtherRows(trackingProgress, RelationDirection.up)) {}
         else checkOtherRows(trackingProgress, RelationDirection.down);
-//        else checkDownstream(trackingProgress);
-        //TODO: Continue here, test, determine relationship
 
-        boolean test = checkCurrentRow(memberA); //remove this
+        //TODO: Determine relationship
+
         return null; //change this
     }
 
@@ -87,17 +86,40 @@ public class Relationship {
         if(!results.isEmpty())
             return true;
 
-        //check cousins. I.e. look at parents' siblings' children
         Set<Member> workingResultsSet = new HashSet<Member>();
-        for(Member parent: memberToConsider.getParents()) {
-            for(Member parentSibling: parent.getSiblings()) {
-                workingResultsSet.addAll(parentSibling.getChildren());
-            }
+        //check cousins. I.e. look at parents' siblings' children
+        helpCurrentRow(memberToConsider, workingResultsSet);
+
+        //check siblings' parents as well
+        for(Member sibling: memberToConsider.getSiblings()) {
+            workingResultsSet.addAll(sibling.getSiblings());
+            helpCurrentRow(sibling, workingResultsSet);
         }
+
+        //check spouses' parents as well
+        for(Member spouse: memberToConsider.getSpouse()) {
+            workingResultsSet.addAll(spouse.getSiblings());
+            helpCurrentRow(spouse, workingResultsSet);
+        }
+
         results = workingResultsSet.parallelStream()
                 .filter(member -> member.equals(memberB))
                 .collect(Collectors.toSet());
         return !results.isEmpty();
+    }
+
+    /**
+     * mutate a set, adding all members from the input member's parents' siblings' children. Helper method for
+     * checkCurrentRow method.
+     * @param member whose parents we're considering
+     * @param resultsSet into which we add the members
+     */
+    private void helpCurrentRow(Member member, Set<Member> resultsSet) {
+        for(Member parent: member.getParents()) {
+            for(Member parentSibling: parent.getSiblings()) {
+                resultsSet.addAll(parentSibling.getChildren());
+            }
+        }
     }
 
     /**
@@ -117,7 +139,7 @@ public class Relationship {
                 memberOfCurrentState = memberA.getParents().get(0);
             else
                 memberOfCurrentState = memberA.getChildren().get(0);
-        } catch(ArrayIndexOutOfBoundsException aioobe) { //if there's no parent or child, then stop checking
+        } catch(IndexOutOfBoundsException aioobe) { //if there's no parent or child, then stop checking
             return false;
         }
         boolean notFound = true; //flag that checks whether a member has been found on the level or not
@@ -137,7 +159,7 @@ public class Relationship {
                         memberOfCurrentState = memberOfCurrentState.getParents().get(0);
                     else
                         memberOfCurrentState = memberOfCurrentState.getChildren().get(0);
-                } catch (ArrayIndexOutOfBoundsException aioobe) {
+                } catch (IndexOutOfBoundsException aioobe) {
                     noMoreMembers = true;
                 }
             }
