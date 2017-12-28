@@ -8,24 +8,28 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import static main.java.Relationship.Relation.*;
+import static org.junit.Assert.assertEquals;
+
 public class RelationshipTest {
     /**
      * Generate some members
      * @return a set containing the generated members
      */
     private Set<Member> generateMembers() {
-        Member me = new Member("Me Fam");
-        Member mom = new Member("Mom Fam");
-        Member dad = new Member("Dad Fam");
-        Member brother = new Member("Brother Fam");
-        Member sister = new Member("Sister Fam");
-        Member momsBrother = new Member("MomsBrother Fam");
-        Member momsBrothersSon = new Member("MomsBrothersSon Fam");
-        Member momsSister = new Member("MomsSister Fam");
-        Member momsDad = new Member("MomsDad Fam");
-        Member momsMom = new Member("MomsMom Fam");
-        Member dadsMom = new Member("DadsMom Fam");
-        Member dadsDad = new Member("DadsDad Fam");
+        String male = "male"; String female = "female";
+        Member me = new Member("Me Fam"); me.setGender(male);
+        Member mom = new Member("Mom Fam"); mom.setGender(female);
+        Member dad = new Member("Dad Fam"); dad.setGender(male);
+        Member brother = new Member("Brother Fam"); brother.setGender(male);
+        Member sister = new Member("Sister Fam"); sister.setGender(female);
+        Member momsBrother = new Member("MomsBrother Fam"); momsBrother.setGender(male);
+        Member momsBrothersSon = new Member("MomsBrothersSon Fam"); momsBrothersSon.setGender(male);
+        Member momsSister = new Member("MomsSister Fam"); momsSister.setGender(female);
+        Member momsDad = new Member("MomsDad Fam"); momsDad.setGender(male);
+        Member momsMom = new Member("MomsMom Fam"); momsMom.setGender(female);
+        Member dadsMom = new Member("DadsMom Fam"); dadsMom.setGender(female);
+        Member dadsDad = new Member("DadsDad Fam"); dadsDad.setGender(male);
 
         //build relationships
         me.addParent(mom);
@@ -88,7 +92,7 @@ public class RelationshipTest {
         for(Member member: temp) momsBrothersSon = member;
 
         Relationship relationship = new Relationship(me, momsBrothersSon);
-        relationship.determineRelationship();
+        assertEquals(cousin, relationship.determineRelationship());
     }
 
     @Test
@@ -107,7 +111,7 @@ public class RelationshipTest {
         for(Member member: temp) momsBrother = member;
 
         Relationship relationship = new Relationship(dad, momsBrother);
-        relationship.determineRelationship();
+        assertEquals(brotherInLaw, relationship.determineRelationship());
     }
 
     @Test
@@ -126,7 +130,7 @@ public class RelationshipTest {
         for(Member member: temp) momsBrother = member;
 
         Relationship relationship = new Relationship(me, momsBrother);
-        relationship.determineRelationship();
+        assertEquals(uncle, relationship.determineRelationship());
     }
 
     @Test
@@ -145,7 +149,7 @@ public class RelationshipTest {
         for(Member member: temp) momsBrothersSon = member;
 
         Relationship relationship = new Relationship(dadsDad, momsBrothersSon);
-        relationship.determineRelationship();
+        assertEquals(grandSon, relationship.determineRelationship());
     }
 
 

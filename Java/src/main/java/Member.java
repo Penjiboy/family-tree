@@ -178,7 +178,7 @@ public class Member {
 
     /**
      * Set gender
-     * @param gender
+     * @param gender as a string or a gender object
      */
     public void setGender(Object gender) {
         if(gender instanceof String) {

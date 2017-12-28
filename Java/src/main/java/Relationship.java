@@ -1,9 +1,6 @@
 package main.java;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.Stack;
+import java.util.*;
 import java.util.stream.Collectors;
 
 /**
@@ -28,10 +25,10 @@ public class Relationship {
         brother, sister, sibling, cousin, halfBrother, halfSister,
         mother, father, grandFather, grandMother, grandParent, parent,
         son, daughter, grandSon, grandDaughter, child, grandChild,
-        uncle, aunt, nephew, niece, parentSibling,
-        husband, wife,
+        uncle, aunt, nephew, niece, parentSibling, siblingChild,
+        husband, wife, spouse,
         stepMother, stepFather, stepBrother, stepSister, stepSon, stepDaughter,
-        motherInLaw, fatherInLaw, brotherInLaw, sisterInLaw,
+        motherInLaw, fatherInLaw, brotherInLaw, sisterInLaw, siblingInLaw,
         unrelated, samePerson
     }
 
@@ -72,12 +69,12 @@ public class Relationship {
         else this.relation = Relation.unrelated;
 
         //Generate inverse relationship if they are unrelated
-        if(!this.relation.equals(Relation.unrelated)) {
+        if(this.relation == null || !this.relation.equals(Relation.unrelated)) {
 
             //TODO: Determine relationship
             Set<Member> result;
 
-            //classify as sibling or cousin
+            //classify as sibling or cousin or husband/wife or sibling in law
             if (trackingProgress.isEmpty()) {
                 //check if direct sibling
                 result = memberA.getSiblings().parallelStream().filter(member -> member.equals(memberB))
@@ -85,10 +82,8 @@ public class Relationship {
                 if (!result.isEmpty()) {
                     //check if it's a male or female\
                     try {
-                        if (memberB.getGender().equals(Member.Gender.male))
-                            this.relation = Relation.brother;
-                        else if (memberB.getGender().equals(Member.Gender.female))
-                            this.relation = Relation.sister;
+                        if (memberB.getGender().equals(Member.Gender.male)) this.relation = Relation.brother;
+                        else if (memberB.getGender().equals(Member.Gender.female)) this.relation = Relation.sister;
                         else this.relation = Relation.sibling;
 
                     } catch (NullPointerException npe) {
@@ -97,6 +92,35 @@ public class Relationship {
                 }
                 //else it's a cousin
                 else this.relation = Relation.cousin;
+
+                //check if spouse
+                result = memberA.getSpouse().parallelStream().filter(member -> member.equals(memberB))
+                        .collect(Collectors.toSet());
+                if(!result.isEmpty()) {
+                    //it must be a spouse
+                    try {
+                        if(memberB.getGender().equals(Member.Gender.male)) this.relation = Relation.husband;
+                        else if(memberB.getGender().equals(Member.Gender.female)) this.relation = Relation.wife;
+                        else this.relation = Relation.spouse;
+                    } catch (NullPointerException npe) {
+                        this.relation = Relation.spouse;
+                    }
+                }
+                //check if it's an in-law
+                List<Member> spouseSiblings = new ArrayList<Member>();
+                for(Member spouse: memberA.getSpouse()) spouseSiblings.addAll(spouse.getSiblings());
+                result = spouseSiblings.parallelStream().filter(member -> member.equals(memberB))
+                        .collect(Collectors.toSet());
+                if(!result.isEmpty()) {
+                    //it must be a brother/sister in law
+                    try {
+                        if(memberB.getGender().equals(Member.Gender.female)) this.relation = Relation.sisterInLaw;
+                        else if(memberB.getGender().equals(Member.Gender.male)) this.relation = Relation.brotherInLaw;
+                        else this.relation = Relation.siblingInLaw;
+                    } catch (NullPointerException npe) {
+                        this.relation =Relation.siblingInLaw;
+                    }
+                }
             }
 
             //classify as parent or uncle/aunt
@@ -140,12 +164,19 @@ public class Relationship {
                 }
                 else {
                     //it must be a niece/nephew
+                    try {
+                        if(memberB.getGender().equals(Member.Gender.male)) this.relation = Relation.nephew;
+                        else if(memberB.getGender().equals(Member.Gender.female)) this.relation = Relation.niece;
+                        else this.relation = Relation.siblingChild;
+                    } catch (NullPointerException npe) {
+                        this.relation = Relation.siblingChild;
+                    }
                 }
             }
         }
 
         //Also don't forget the relationship going the other way. I.e. if A -> B is father, then B -> A is son/daughter
-        return null; //change this
+        return this.relation;
     }
 
     /**
