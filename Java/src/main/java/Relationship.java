@@ -209,31 +209,34 @@ public class Relationship {
 
         //Check whether grandchild or grandparent
         if(trackingProgress.size() >= 2) {
-            this.greatCount = 2 - trackingProgress.size();
-            try {
-                //check whether grandson or grandfather
-                if(memberB.getGender().equals(Member.Gender.male)) {
-                    if(trackingProgress.peek().equals(RelationDirection.up)) this.relation = Relation.grandFather;
-                    else if(trackingProgress.peek().equals(RelationDirection.down))
-                        this.relation = Relation.grandSon;
-                }
-                //check whether granddaughter or grandmother
-                else if(memberB.getGender().equals(Member.Gender.female)) {
-                    if(trackingProgress.peek().equals(RelationDirection.up)) this.relation = Relation.grandMother;
-                    else if(trackingProgress.peek().equals(RelationDirection.down))
-                        this.relation = Relation.grandDaughter;
-                }
-                //else they must be general grandparent or grandchild
-                else {
-                    if(trackingProgress.peek().equals(RelationDirection.up)) this.relation = Relation.grandParent;
-                    else if(trackingProgress.peek().equals(RelationDirection.down))
+            if(validateGrandRelationship(trackingProgress)) {
+                this.greatCount = 2 - trackingProgress.size();
+                try {
+                    //check whether grandson or grandfather
+                    if (memberB.getGender().equals(Member.Gender.male)) {
+                        if (trackingProgress.peek().equals(RelationDirection.up)) this.relation = Relation.grandFather;
+                        else if (trackingProgress.peek().equals(RelationDirection.down))
+                            this.relation = Relation.grandSon;
+                    }
+                    //check whether granddaughter or grandmother
+                    else if (memberB.getGender().equals(Member.Gender.female)) {
+                        if (trackingProgress.peek().equals(RelationDirection.up)) this.relation = Relation.grandMother;
+                        else if (trackingProgress.peek().equals(RelationDirection.down))
+                            this.relation = Relation.grandDaughter;
+                    }
+                    //else they must be general grandparent or grandchild
+                    else {
+                        if (trackingProgress.peek().equals(RelationDirection.up)) this.relation = Relation.grandParent;
+                        else if (trackingProgress.peek().equals(RelationDirection.down))
+                            this.relation = Relation.grandChild;
+                    }
+                } catch (NullPointerException npe) {
+                    if (trackingProgress.peek().equals(RelationDirection.up)) this.relation = Relation.grandParent;
+                    else if (trackingProgress.peek().equals(RelationDirection.down))
                         this.relation = Relation.grandChild;
                 }
-            } catch (NullPointerException npe) {
-                if(trackingProgress.peek().equals(RelationDirection.up)) this.relation = Relation.grandParent;
-                else if(trackingProgress.peek().equals(RelationDirection.down))
-                    this.relation = Relation.grandChild;
             }
+            else this.relation = Relation.unrelated;
         }
 
 
@@ -244,6 +247,86 @@ public class Relationship {
             //it means inverse relationship has already been created
         }
         return this.relation;
+    }
+
+    /**
+     * Validate  the grand-grand relationship
+     * @return true if it's a valid grand-grand relationship, false otherwise
+     */
+    private boolean validateGrandRelationship(Stack<RelationDirection> trackingProgress) {
+        if(trackingProgress.peek().equals(RelationDirection.down)) {
+            for(Member child: memberA.getChildren()) {
+                List<Member> result = child.getChildren().parallelStream().filter(member -> member.equals(memberB))
+                        .collect(Collectors.toList());
+                if(!result.isEmpty()) return true;
+                result = child.getChildren();
+                for(Member grandChild: result) {
+                    if(helpValidateGrandRelationship(grandChild, new Stack<RelationDirection>(),
+                            RelationDirection.down))
+                        return true;
+                }
+            }
+        }
+        else if(trackingProgress.peek().equals(RelationDirection.up)) {
+            for(Member parent: memberA.getParents()) {
+                List<Member> result = parent.getParents().parallelStream().filter(member -> member.equals(memberB))
+                        .collect(Collectors.toList());
+                if(!result.isEmpty()) return true;
+                result = parent.getParents();
+                for(Member grandParent: result) {
+                    if(helpValidateGrandRelationship(grandParent, new Stack<RelationDirection>(),RelationDirection.up))
+                        return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    /**
+     * Helper method for validateGrandRelationship. Iteratively checks a level to see if memberB exists on that level or
+     * not until we run out of levels. We start checking the level on which the input member is at. It is very similar
+     * to the piece of code in checkOtherRows
+     * @param memberOfCurrentState
+     * @param currentState stack of directions
+     * @param direction in which we're checking
+     * @return true if the member exists in that direction, false otherwise.
+     */
+    private boolean helpValidateGrandRelationship(Member memberOfCurrentState, Stack<RelationDirection> currentState,
+                                                  RelationDirection direction) {
+        boolean notFound = true; //flag that checks whether a member has been found on the level or not
+        boolean noMoreMembers = false; //flag that checks whether there are any more members upstream
+
+        //while loop to check a level, if the member is not found, we continue going up, until a member is found
+        //or we cannot go any further up
+        while(notFound && !noMoreMembers) {
+
+            if(direction.equals(RelationDirection.up))
+                currentState.push(RelationDirection.up);
+            else
+                currentState.push(RelationDirection.down);
+            try {
+                if(direction.equals(RelationDirection.up))
+                    memberOfCurrentState = memberOfCurrentState.getParents().get(0);
+                else
+                    memberOfCurrentState = memberOfCurrentState.getChildren().get(0);
+            } catch (IndexOutOfBoundsException aioobe) {
+                noMoreMembers = true;
+            }
+
+            notFound = !checkCurrentRow(memberOfCurrentState);
+        }
+
+        //perhaps some redundant code in here
+        if((!notFound) && (!noMoreMembers))
+            return true;
+        else if((notFound) && (noMoreMembers)) {
+            currentState.clear();
+            return false;
+        }
+        else { //might want to change this
+            currentState.clear();
+            return false;
+        }
     }
 
     /**
@@ -322,26 +405,27 @@ public class Relationship {
     }
 
     /**
-     * Check if memberB exists on a row above memberA
+     * Check if memberB exists on a row above/below memberA
      * @param currentState of how many rows have been searched so far
      * @param direction in which we are checking, i.e. up or down
      * @return true if memberB exists on a row above/below memberA
      */
     private boolean checkOtherRows(Stack<RelationDirection> currentState, RelationDirection direction) {
-        if(direction.equals(RelationDirection.up))
+        if (direction.equals(RelationDirection.up))
             currentState.push(RelationDirection.up);
-        else if(direction.equals(RelationDirection.down))
+        else if (direction.equals(RelationDirection.down))
             currentState.push(RelationDirection.down);
         Member memberOfCurrentState;
         try {
-            if(direction.equals(RelationDirection.up))
+            if (direction.equals(RelationDirection.up))
                 memberOfCurrentState = memberA.getParents().get(0);
             else
                 memberOfCurrentState = memberA.getChildren().get(0);
-        } catch(IndexOutOfBoundsException aioobe) { //if there's no parent or child, then stop checking
+        } catch (IndexOutOfBoundsException aioobe) { //if there's no parent or child, then stop checking
             currentState.clear();
             return false;
         }
+
         boolean notFound = true; //flag that checks whether a member has been found on the level or not
         boolean noMoreMembers = false; //flag that checks whether there are any more members upstream
 

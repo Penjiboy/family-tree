@@ -1,8 +1,11 @@
 package main.java;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.HashSet;
+import java.util.Scanner;
 import java.util.Set;
+
 
 /**
  * Storage facility. Acts like a database, initialized using a file name, reads a file and creates the members,
@@ -19,8 +22,10 @@ public class Storage {
      * initialize the storage, i.e. read the input file and create member objects and store them in the set
      * @param file
      */
-    public static void initializeMembers(File file) {
+    public static void initializeMembers(File file) throws IOException {
         //TODO: Implement this method
+        Scanner fileReader = new Scanner(file);
+
     }
 
     /**

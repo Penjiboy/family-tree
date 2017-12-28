@@ -158,10 +158,10 @@ public class RelationshipTest {
         for(Member member: temp) momsBrothersSon = member;
 
         Relationship relationship = Relationship.createRelationship(dadsDad, momsBrothersSon);
-        assertEquals(grandSon, relationship.determineRelationship());
+        assertEquals(unrelated, relationship.determineRelationship());
 
         //check inverse relationship
-        assertEquals(grandFather, relationship.findInverseRelationship().relation);
+        assertEquals(unrelated, relationship.findInverseRelationship().relation);
     }
 
 
