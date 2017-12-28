@@ -26,8 +26,9 @@ public class Relationship {
      */
     public enum Relation {
         brother, sister, sibling, cousin, halfBrother, halfSister,
-        mother, father, grandFather, grandMother, son, daughter, grandSon, grandDaughter, grandParent,
-        uncle, aunt, nephew, niece,
+        mother, father, grandFather, grandMother, grandParent, parent,
+        son, daughter, grandSon, grandDaughter, child, grandChild,
+        uncle, aunt, nephew, niece, parentSibling,
         husband, wife,
         stepMother, stepFather, stepBrother, stepSister, stepSon, stepDaughter,
         motherInLaw, fatherInLaw, brotherInLaw, sisterInLaw,
@@ -67,27 +68,83 @@ public class Relationship {
 
         if(checkCurrentRow(memberA)) {}
         else if(checkOtherRows(trackingProgress, RelationDirection.up)) {}
-        else checkOtherRows(trackingProgress, RelationDirection.down);
+        else if(checkOtherRows(trackingProgress, RelationDirection.down)) {}
+        else this.relation = Relation.unrelated;
 
-        //TODO: Determine relationship
-        Set<Member> result;
-        //classify as sibling or cousin
-        if(trackingProgress.isEmpty()) {
-            //check if direct sibling
-            result = memberA.getSiblings().parallelStream()
-                    .filter(member -> member.equals(memberB))
-                    .collect(Collectors.toSet());
-            if(!result.isEmpty()) {
-                //check if it's a male or female\
-                Member sibling;
-                Relation relation;
-                for(Member member: result) sibling = member;
-                try{
-                    
+        //Generate inverse relationship if they are unrelated
+        if(!this.relation.equals(Relation.unrelated)) {
+
+            //TODO: Determine relationship
+            Set<Member> result;
+
+            //classify as sibling or cousin
+            if (trackingProgress.isEmpty()) {
+                //check if direct sibling
+                result = memberA.getSiblings().parallelStream().filter(member -> member.equals(memberB))
+                        .collect(Collectors.toSet());
+                if (!result.isEmpty()) {
+                    //check if it's a male or female\
+                    try {
+                        if (memberB.getGender().equals(Member.Gender.male))
+                            this.relation = Relation.brother;
+                        else if (memberB.getGender().equals(Member.Gender.female))
+                            this.relation = Relation.sister;
+                        else this.relation = Relation.sibling;
+
+                    } catch (NullPointerException npe) {
+                        this.relation = Relation.sibling;
+                    }
+                }
+                //else it's a cousin
+                else this.relation = Relation.cousin;
+            }
+
+            //classify as parent or uncle/aunt
+            if ((trackingProgress.size() == 1) && (trackingProgress.peek().equals(RelationDirection.up))) {
+                result = memberA.getParents().parallelStream().filter(member -> member.equals(memberB))
+                        .collect(Collectors.toSet());
+                if (!result.isEmpty()) {
+                    //therefore it's a parent
+                    try {
+                        if (memberB.getGender().equals(Member.Gender.male)) this.relation = Relation.father;
+                        else if (memberB.getGender().equals(Member.Gender.female)) this.relation = Relation.mother;
+                        else this.relation = Relation.parent;
+                    } catch (NullPointerException npe) {
+                        this.relation = Relation.parent;
+                    }
+                } else {
+                    //it's an uncle/aunt
+                    try {
+                        if (memberB.getGender().equals(Member.Gender.male)) this.relation = Relation.uncle;
+                        else if (memberB.getGender().equals(Member.Gender.female)) this.relation = Relation.aunt;
+                        else this.relation = Relation.parentSibling;
+                    } catch (NullPointerException npe) {
+                        this.relation = Relation.parentSibling;
+                    }
+                }
+            }
+
+            //classify as son/daughter or niece/nephew
+            if ((trackingProgress.size() == 1) && (trackingProgress.peek().equals(RelationDirection.down))) {
+                result = memberA.getChildren().parallelStream().filter(member -> member.equals(memberB))
+                        .collect(Collectors.toSet());
+                if(!result.isEmpty()) {
+                    //it must be a son/daughter
+                    try {
+                        if(memberB.getGender().equals(Member.Gender.male)) this.relation = Relation.son;
+                        else if(memberB.getGender().equals(Member.Gender.female)) this.relation = Relation.daughter;
+                        else this.relation = Relation.child;
+                    } catch (NullPointerException npe) {
+                        this.relation = Relation.child;
+                    }
+                }
+                else {
+                    //it must be a niece/nephew
                 }
             }
         }
 
+        //Also don't forget the relationship going the other way. I.e. if A -> B is father, then B -> A is son/daughter
         return null; //change this
     }
 
