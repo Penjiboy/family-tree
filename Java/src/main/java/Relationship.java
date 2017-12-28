@@ -140,6 +140,10 @@ public class Relationship {
             for(Member spouse: memberA.getSpouse()) spouseSiblings.addAll(spouse.getSiblings());
             result = spouseSiblings.parallelStream().filter(member -> member.equals(memberB))
                     .collect(Collectors.toSet());
+            List<Member> siblingsSpouse = new ArrayList<Member>();
+            for(Member sibling: memberA.getSiblings()) siblingsSpouse.addAll(sibling.getSpouse());
+            result.addAll(siblingsSpouse.parallelStream()
+                    .filter(member -> member.equals(memberB)).collect(Collectors.toSet()));
             if(!result.isEmpty()) {
                 //it must be a brother/sister in law
                 try {
@@ -288,7 +292,7 @@ public class Relationship {
             workingResultsSet.addAll(sibling.getSiblings());
             helpCurrentRow(sibling, workingResultsSet);
 
-            //for(Member spouse: sibling.getSpouse()) workingResultsSet.add(spouse);
+            for(Member spouse: sibling.getSpouse()) workingResultsSet.add(spouse);
         }
 
         //check spouses' parents as well
