@@ -68,7 +68,9 @@ public class Relationship {
         else if(checkOtherRows(trackingProgress, RelationDirection.down)) {}
         else this.relation = Relation.unrelated;
 
-        //Generate inverse relationship if they are unrelated
+        //Generate inverse relationship if they are unrelated??
+
+
         if(this.relation == null || !this.relation.equals(Relation.unrelated)) {
 
             //TODO: Determine relationship
@@ -171,6 +173,21 @@ public class Relationship {
                     } catch (NullPointerException npe) {
                         this.relation = Relation.siblingChild;
                     }
+                }
+            }
+
+            //Check whether grandchild or grandparent
+            if(trackingProgress.size() >= 2) {
+                this.greatCount = 2 - trackingProgress.size();
+                try {
+                    //check whether grandson or grandfather
+                    if(memberB.getGender().equals(Member.Gender.male)) {
+                        if(trackingProgress.peek().equals(RelationDirection.up)) this.relation = Relation.grandFather;
+                        else if(trackingProgress.peek().equals(RelationDirection.down))
+                            this.relation = Relation.grandSon;
+                    }
+                    //check whether granddaughter or grandmother
+                    else if(memberB.getGender().equals(Member.Gender.female))
                 }
             }
         }
