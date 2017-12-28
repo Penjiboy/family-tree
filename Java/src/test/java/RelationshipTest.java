@@ -91,8 +91,11 @@ public class RelationshipTest {
         Member momsBrothersSon = null;
         for(Member member: temp) momsBrothersSon = member;
 
-        Relationship relationship = new Relationship(me, momsBrothersSon);
+        Relationship relationship = Relationship.createRelationship(me, momsBrothersSon);
         assertEquals(cousin, relationship.determineRelationship());
+
+        //check inverse relationship
+        assertEquals(cousin, relationship.findInverseRelationship().relation);
     }
 
     @Test
@@ -110,8 +113,11 @@ public class RelationshipTest {
         Member momsBrother = null;
         for(Member member: temp) momsBrother = member;
 
-        Relationship relationship = new Relationship(dad, momsBrother);
+        Relationship relationship = Relationship.createRelationship(dad, momsBrother);
         assertEquals(brotherInLaw, relationship.determineRelationship());
+
+        //check inverse relationship
+        assertEquals(brotherInLaw, relationship.findInverseRelationship().relation);
     }
 
     @Test
@@ -129,8 +135,11 @@ public class RelationshipTest {
         Member momsBrother = null;
         for(Member member: temp) momsBrother = member;
 
-        Relationship relationship = new Relationship(me, momsBrother);
+        Relationship relationship = Relationship.createRelationship(me, momsBrother);
         assertEquals(uncle, relationship.determineRelationship());
+
+        //check for inverse relationship
+        assertEquals(nephew, relationship.findInverseRelationship().relation);
     }
 
     @Test
@@ -148,8 +157,11 @@ public class RelationshipTest {
         Member momsBrothersSon = null;
         for(Member member: temp) momsBrothersSon = member;
 
-        Relationship relationship = new Relationship(dadsDad, momsBrothersSon);
+        Relationship relationship = Relationship.createRelationship(dadsDad, momsBrothersSon);
         assertEquals(grandSon, relationship.determineRelationship());
+
+        //check inverse relationship
+        assertEquals(grandFather, relationship.findInverseRelationship().relation);
     }
 
 
