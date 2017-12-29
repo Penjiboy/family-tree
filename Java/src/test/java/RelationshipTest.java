@@ -1,15 +1,16 @@
-package test.java;
+//package test.java;
 
-import main.java.Member;
-import main.java.Relationship;
+//import main.java.Member;
+//import main.java.Relationship;
 import org.junit.Test;
 
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
+//import static Relationship.Relation.*;
+//import static main.java.Relationship.Relation.*;
+import static org.junit.Assert.*;
 
-import static main.java.Relationship.Relation.*;
-import static org.junit.Assert.assertEquals;
 
 public class RelationshipTest {
     /**
@@ -92,10 +93,10 @@ public class RelationshipTest {
         for(Member member: temp) momsBrothersSon = member;
 
         Relationship relationship = Relationship.createRelationship(me, momsBrothersSon);
-        assertEquals(cousin, relationship.determineRelationship());
+        assertEquals(Relationship.Relation.cousin, relationship.determineRelationship());
 
         //check inverse relationship
-        assertEquals(cousin, relationship.findInverseRelationship().relation);
+        assertEquals(Relationship.Relation.cousin, relationship.findInverseRelationship().relation);
     }
 
     @Test
@@ -114,10 +115,10 @@ public class RelationshipTest {
         for(Member member: temp) momsBrother = member;
 
         Relationship relationship = Relationship.createRelationship(dad, momsBrother);
-        assertEquals(brotherInLaw, relationship.determineRelationship());
+        assertEquals(Relationship.Relation.brotherInLaw, relationship.determineRelationship());
 
         //check inverse relationship
-        assertEquals(brotherInLaw, relationship.findInverseRelationship().relation);
+        assertEquals(Relationship.Relation.brotherInLaw, relationship.findInverseRelationship().relation);
     }
 
     @Test
@@ -136,10 +137,10 @@ public class RelationshipTest {
         for(Member member: temp) momsBrother = member;
 
         Relationship relationship = Relationship.createRelationship(me, momsBrother);
-        assertEquals(uncle, relationship.determineRelationship());
+        assertEquals(Relationship.Relation.uncle, relationship.determineRelationship());
 
         //check for inverse relationship
-        assertEquals(nephew, relationship.findInverseRelationship().relation);
+        assertEquals(Relationship.Relation.nephew, relationship.findInverseRelationship().relation);
     }
 
     @Test
@@ -158,10 +159,10 @@ public class RelationshipTest {
         for(Member member: temp) momsBrothersSon = member;
 
         Relationship relationship = Relationship.createRelationship(dadsDad, momsBrothersSon);
-        assertEquals(unrelated, relationship.determineRelationship());
+        assertEquals(Relationship.Relation.unrelated, relationship.determineRelationship());
 
         //check inverse relationship
-        assertEquals(unrelated, relationship.findInverseRelationship().relation);
+        assertEquals(Relationship.Relation.unrelated, relationship.findInverseRelationship().relation);
     }
 
 

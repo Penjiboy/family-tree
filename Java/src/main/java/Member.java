@@ -1,8 +1,9 @@
-package main.java;
+//package main.java;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class Member {
     private Name name;
