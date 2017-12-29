@@ -1,8 +1,11 @@
 //package main.java;
 
 import java.io.File;
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
+import javax.json.*;
+import javax.json.stream.JsonParser;
 
 
 public class Member {
@@ -137,7 +140,89 @@ public class Member {
     public Member(String name) {
         Name myName = new Name(name);
         this.name = myName;
+        Storage.addMember(this);
     }
+
+
+    /**
+     * Create a member object from a Json objected
+     * @param jsonObject must be properly formatted
+     */
+    public Member(JsonObject jsonObject) {
+        JsonParser parseMember = Json.createParser(new StringReader(jsonObject.toString()));
+        Member member = new Member("");
+
+
+
+        while(parseMember.hasNext()) {
+            JsonParser.Event event = parseMember.next();
+            if(event != JsonParser.Event.KEY_NAME)
+                continue;
+
+            switch(parseMember.getString()) {
+                case "Name":
+                    parseMember.next();
+                    Name name = new Name(parseMember.getString());
+                    member.name = name;
+                    break;
+                case "Date of Birth":
+                    parseMember.next();
+                    Date dob = new Date(parseMember.getString());
+                    member.setDateOfBirth(dob);
+                    break;
+                case "Date of Death":
+                    parseMember.next();
+                    Date dod = new Date(parseMember.getString());
+                    member.setDateOfDeath(dod);
+                    break;
+                case "Gender":
+                    parseMember.next();
+                    member.setGender(parseMember.getString());
+                    break;
+                case "Spouse(s)":
+
+
+            }
+        }
+    }
+
+    /**
+     * Generate a Json formatted string representation of this member
+     * @return Json formatted string
+     */
+    public String jsonString() {
+        JsonArrayBuilder spousesArray = Json.createArrayBuilder();
+        JsonArrayBuilder childrenArray = Json.createArrayBuilder();
+        JsonArrayBuilder siblingsArray = Json.createArrayBuilder();
+        JsonArrayBuilder parentsArray = Json.createArrayBuilder();
+        JsonArrayBuilder extraNotesArray = Json.createArrayBuilder();
+
+        for (Member spouse : this.getSpouse()) spousesArray.add(spouse.name.fullName);
+        for (Member child : this.getChildren()) childrenArray.add(child.name.fullName);
+        for(Member sibling: this.getSiblings()) siblingsArray.add(sibling.name.fullName);
+        for(Member parent: this.getParents()) parentsArray.add(parent.name.fullName);
+        for(String note: this.getExtraNotes()) extraNotesArray.add(note);
+
+        JsonArrayBuilder myJsonArray = Json.createArrayBuilder();
+        myJsonArray.add(Json.createObjectBuilder()
+                .add("Name", this.name.fullName)
+                .add("Date of Birth", this.dateOfBirth.toString())
+                .add("Date of Death", this.dateOfDeath.toString())
+                .add("Gender", this.getGender().toString())
+                .add("Spouse(s)", spousesArray)
+                .add("Children", childrenArray)
+                .add("Parents", parentsArray)
+                .add("Siblings", siblingsArray)
+                .add("Extra Notes", extraNotesArray)
+        );
+
+        return myJsonArray.build().toString();
+    }
+
+    /**
+     * checks if a member already exists in the database as a complete object
+     * returns
+     */
 
     /**
      * Compares this member to other, returns true if the two members are the same based on name, date of birth, and
