@@ -1,8 +1,6 @@
 //package main.java;
 
-import java.io.File;
-import java.io.IOException;
-import java.io.StringReader;
+import java.io.*;
 import java.util.*;
 import javax.json.*;
 
@@ -76,11 +74,21 @@ public class Storage {
     /**
      * write new changes to the actual file so that changes are saved
      * @param file to which we are writing changes. The file must be closed to allow for a write operation to occur
-     * @return true if the write operation was successful, false otherwise.
+     * @return true if the write operation was successful, false otherwise and including when an IO Exception is thrown
      */
-    private static boolean updateFile(File file) {
-        //TODO: Implement this method
-        if(!file.canWrite())
+    public static boolean updateFile(File file) {
+        try {
+            if (!file.canWrite())
+                return false;
+            FileWriter fileWriter = new FileWriter(file);
+            fileWriter.write("");
+            for (Member member : allMembers) {
+                fileWriter.append(member.jsonString() + '\n');
+                fileWriter.flush();
+            }
+            return true;
+        } catch (IOException ioe) {
             return false;
+        }
     }
 }

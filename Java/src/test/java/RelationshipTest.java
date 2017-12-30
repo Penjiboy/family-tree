@@ -19,18 +19,43 @@ public class RelationshipTest {
      */
     private Set<Member> generateMembers() {
         String male = "male"; String female = "female";
+        Date genericDate = new Date(1,1,1);
+
         Member me = new Member("Me Fam"); me.setGender(male);
+        me.setDateOfDeath(genericDate); me.setDateOfBirth(genericDate);
+
         Member mom = new Member("Mom Fam"); mom.setGender(female);
+        mom.setDateOfBirth(genericDate); mom.setDateOfDeath(genericDate);
+
         Member dad = new Member("Dad Fam"); dad.setGender(male);
+        dad.setDateOfDeath(genericDate); dad.setDateOfBirth(genericDate);
+
         Member brother = new Member("Brother Fam"); brother.setGender(male);
+        brother.setDateOfBirth(genericDate); brother.setDateOfDeath(genericDate);
+
         Member sister = new Member("Sister Fam"); sister.setGender(female);
+        sister.setDateOfDeath(genericDate); sister.setDateOfBirth(genericDate);
+
         Member momsBrother = new Member("MomsBrother Fam"); momsBrother.setGender(male);
+        momsBrother.setDateOfBirth(genericDate); momsBrother.setDateOfDeath(genericDate);
+
         Member momsBrothersSon = new Member("MomsBrothersSon Fam"); momsBrothersSon.setGender(male);
+        momsBrothersSon.setDateOfDeath(genericDate); momsBrothersSon.setDateOfBirth(genericDate);
+
         Member momsSister = new Member("MomsSister Fam"); momsSister.setGender(female);
+        momsSister.setDateOfBirth(genericDate); momsSister.setDateOfDeath(genericDate);
+
         Member momsDad = new Member("MomsDad Fam"); momsDad.setGender(male);
+        momsDad.setDateOfDeath(genericDate); momsDad.setDateOfBirth(genericDate);
+
         Member momsMom = new Member("MomsMom Fam"); momsMom.setGender(female);
+        momsMom.setDateOfBirth(genericDate); momsMom.setDateOfDeath(genericDate);
+
         Member dadsMom = new Member("DadsMom Fam"); dadsMom.setGender(female);
+        dadsMom.setDateOfDeath(genericDate); dadsMom.setDateOfBirth(genericDate);
+
         Member dadsDad = new Member("DadsDad Fam"); dadsDad.setGender(male);
+        dadsDad.setDateOfBirth(genericDate); dadsDad.setDateOfDeath(genericDate);
 
         //build relationships
         me.addParent(mom);
