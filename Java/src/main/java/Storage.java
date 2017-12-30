@@ -2,9 +2,7 @@
 
 import java.io.File;
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 import javax.json.*;
 
 
@@ -17,6 +15,7 @@ import javax.json.*;
  */
 public class Storage {
     private static Set<Member> allMembers = new HashSet<Member>();
+    private static List<Member> incompleteMembers = new ArrayList<Member>();
     private static Set<Relationship> allRelationships = new HashSet<Relationship>();
 
     /**
@@ -37,6 +36,8 @@ public class Storage {
         return new HashSet<Member>(allMembers);
     }
 
+    public static List<Member> getIncompleteMembers() {return new ArrayList<Member>(incompleteMembers); }
+
     /**
      * get a set of all relationships
      * @return all relationships
@@ -50,6 +51,12 @@ public class Storage {
      * @param member
      */
     public static void addMember(Member member) {
+        boolean isComplete = true;
+        if(member.getGender() == null) isComplete = false;
+        if(member.getDateOfBirth() == null) isComplete = false;
+        if(member.getDateOfDeath() == null) isComplete = false;
+        if(!isComplete)
+            incompleteMembers.add(member);
         allMembers.add(member);
         updateFile();
     }

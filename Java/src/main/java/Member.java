@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 import javax.json.*;
 import javax.json.stream.JsonParser;
 
@@ -32,117 +34,14 @@ public class Member {
     }
 
     /**
-     * Constructor of a Member object using all parameters. Name is input as a Name object
-     * @param name
-     * @param spouse
-     * @param children
-     * @param parents
-     * @param siblings
-     * @param extraNotes
-     * @param image
-     */
-    public Member(Name name, Date dateOfBirth, Date  dateOfDeath, Gender gender, List<Member> spouse, List<Member> children,
-                  List<Member> parents, List<Member> siblings, List<String> extraNotes, File image) {
-        this.name = name;
-        this.dateOfBirth = dateOfBirth;
-        this.dateOfDeath = dateOfDeath;
-        this.gender = gender;
-        this.spouse = spouse;
-        this.children = children;
-        this.parents = parents;
-        this.siblings = siblings;
-        this.extraNotes = extraNotes;
-        this.image = image;
-    }
-
-    /**
-     * Constructor of a Member object
-     * @param name
-     * @param dateOfBirth
-     * @param dateOfDeath
-     * @param spouse
-     * @param children
-     * @param parents
-     * @param siblings
-     * @param extraNotes
-     */
-    public Member(Name name, Date dateOfBirth, Date  dateOfDeath, Gender gender, List<Member> spouse, List<Member> children,
-                  List<Member> parents, List<Member> siblings, List<String> extraNotes) {
-        this.name = name;
-        this.dateOfBirth = dateOfBirth;
-        this.dateOfDeath = dateOfDeath;
-        this.gender = gender;
-        this.spouse = spouse;
-        this.children = children;
-        this.parents = parents;
-        this.siblings = siblings;
-        this.extraNotes = extraNotes;
-    }
-
-    /**
-     * Constructor of a Member object using all parameters. Name is input as a String object
-     * @param name
-     * @param spouse
-     * @param children
-     * @param parents
-     * @param siblings
-     * @param extraNotes
-     * @param image
-     */
-    public Member(String name, Date dateOfBirth, Date  dateOfDeath, Gender gender, List<Member> spouse, List<Member> children,
-                  List<Member> parents, List<Member> siblings, List<String> extraNotes, File image) {
-        Name myName = new Name(name);
-        this.name = myName;
-        this.dateOfBirth = dateOfBirth;
-        this.dateOfDeath = dateOfDeath;
-        this.gender = gender;
-        this.spouse = spouse;
-        this.children = children;
-        this.parents = parents;
-        this.siblings = siblings;
-        this.extraNotes = extraNotes;
-        this.image = image;
-    }
-
-    /**
-     * Constructor of a Member object
-     * @param name
-     * @param dateOfBirth
-     * @param dateOfDeath
-     * @param spouse
-     * @param children
-     * @param parents
-     * @param siblings
-     * @param extraNotes
-     */
-    public Member(String name, Date dateOfBirth, Date  dateOfDeath, Gender gender, List<Member> spouse, List<Member> children,
-                  List<Member> parents, List<Member> siblings, List<String> extraNotes) {
-        Name myName = new Name(name);
-        this.name = myName;
-        this.dateOfBirth = dateOfBirth;
-        this.dateOfDeath = dateOfDeath;
-        this.gender = gender;
-        this.spouse = spouse;
-        this.children = children;
-        this.parents = parents;
-        this.siblings = siblings;
-        this.extraNotes = extraNotes;
-    }
-
-    /**
-     * Constructor that takes in only a name object
+     * Constructor that takes in only a name string
      * @param name
      */
-    public Member(Name name) {
-        this.name = name;
-    }
-
     public Member(String name) {
         Name myName = new Name(name);
         this.name = myName;
         Storage.addMember(this);
     }
-
 
     /**
      * Create a member object from a Json objected
@@ -152,8 +51,6 @@ public class Member {
         JsonParser parseMember = Json.createParser(new StringReader(jsonObject.toString()));
         Member member = new Member("");
 
-
-
         while(parseMember.hasNext()) {
             JsonParser.Event event = parseMember.next();
             if(event != JsonParser.Event.KEY_NAME)
@@ -162,8 +59,13 @@ public class Member {
             switch(parseMember.getString()) {
                 case "Name":
                     parseMember.next();
-                    Name name = new Name(parseMember.getString());
-                    member.name = name;
+                    if(nameExists(parseMember.getString())) {
+                        member = Storage.getIncompleteMembers().parallelStream()
+                                .filter(member1 -> member1.name.fullName.contentEquals(parseMember.getString()))
+                                .collect(Collectors.toList()).get(0);
+                        Storage.getIncompleteMembers().remove(member);
+                    }
+                    member.name = new Name(parseMember.getString());
                     break;
                 case "Date of Birth":
                     parseMember.next();
@@ -180,10 +82,88 @@ public class Member {
                     member.setGender(parseMember.getString());
                     break;
                 case "Spouse(s)":
-
-
+                    parseMember.next();
+                    List<String> spouseNames = new ArrayList<String>();
+                    while(parseMember.next() == JsonParser.Event.VALUE_STRING)
+                        spouseNames.add(parseMember.getString());
+                    for(String spouse: spouseNames) {
+                        if(nameExists(spouse)) {
+                            Member member1 = Storage.getAllMembers().parallelStream()
+                                    .filter(member2 -> member2.name.fullName.contentEquals(spouse))
+                                    .collect(Collectors.toList()).get(0);
+                            member.addSpouse(member1);
+                        }
+                        else {
+                            Member member1 = new Member(spouse);
+                            member.addSpouse(member1);
+                        }
+                    }
+                    break;
+                case "Children":
+                    parseMember.next();
+                    List<String> childrenNames = new ArrayList<String>();
+                    while(parseMember.next() == JsonParser.Event.VALUE_STRING)
+                        childrenNames.add(parseMember.getString());
+                    for(String child: childrenNames) {
+                        if(nameExists(child)) {
+                            Member member1 = Storage.getAllMembers().parallelStream()
+                                    .filter(member2 -> member2.name.fullName.contentEquals(child))
+                                    .collect(Collectors.toList()).get(0);
+                            member.addChild(member1);
+                        }
+                        else {
+                            Member member1 = new Member(child);
+                            member.addChild(member1);
+                        }
+                    }
+                    break;
+                case "Parents":
+                    parseMember.next();
+                    List<String> parentNames = new ArrayList<String>();
+                    while(parseMember.next() == JsonParser.Event.VALUE_STRING)
+                        parentNames.add(parseMember.getString());
+                    for(String parent: parentNames) {
+                        if(nameExists(parent)) {
+                            Member member1 = Storage.getAllMembers().parallelStream()
+                                    .filter(member2 -> member2.name.fullName.contentEquals(parent))
+                                    .collect(Collectors.toList()).get(0);
+                            member.addParent(member1);
+                        }
+                        else {
+                            Member member1 = new Member(parent);
+                            member.addParent(member1);
+                        }
+                    }
+                    break;
+                case "Siblings":
+                    parseMember.next();
+                    List<String> siblingNames = new ArrayList<>();
+                    while(parseMember.next() == JsonParser.Event.VALUE_STRING)
+                        siblingNames.add(parseMember.getString());
+                    for(String sibling: siblingNames) {
+                        if(nameExists(sibling)) {
+                            Member member1 = Storage.getAllMembers().parallelStream()
+                                    .filter(member2 -> member2.name.fullName.contentEquals(sibling))
+                                    .collect(Collectors.toList()).get(0);
+                            member.addSibling(member1);
+                        }
+                        else {
+                            Member member1 = new Member(sibling);
+                            member.addSibling(member1);
+                        }
+                    }
+                    break;
+                case "Extra Notes":
+                    parseMember.next();
+                    while(parseMember.next() == JsonParser.Event.VALUE_STRING) {
+                        member.addNote(parseMember.getString());
+                    }
+                    break;
+                default: break;
             }
         }
+
+        Storage.addMember(member);
     }
 
     /**
@@ -220,9 +200,15 @@ public class Member {
     }
 
     /**
-     * checks if a member already exists in the database as a complete object
-     * returns
+     * Checks if a member already exists in the databbse with just the name filled in.
+     * @return true if they have the name or more details filled in, false
+     * if they do not exist in the database
      */
+    private boolean nameExists(String name) {
+        Set<Member> results = Storage.getAllMembers().parallelStream()
+                .filter(member -> member.name.fullName.contentEquals(name)).collect(Collectors.toSet());
+        return !results.isEmpty();
+    }
 
     /**
      * Compares this member to other, returns true if the two members are the same based on name, date of birth, and
