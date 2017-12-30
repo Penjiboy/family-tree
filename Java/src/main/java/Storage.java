@@ -2,6 +2,7 @@
 
 import java.io.File;
 import java.io.IOException;
+import java.io.StringReader;
 import java.util.*;
 import javax.json.*;
 
@@ -23,8 +24,11 @@ public class Storage {
      * @param file
      */
     public static void initializeMembers(File file) throws IOException {
-        //TODO: Implement this method
         Scanner fileReader = new Scanner(file);
+        while(fileReader.hasNext()) {
+            JsonObject jsonObject = Json.createReader(new StringReader(fileReader.nextLine())).readObject();
+            Member member = new Member(jsonObject);
+        }
 
     }
 
@@ -47,7 +51,8 @@ public class Storage {
     }
 
     /**
-     * add a member to the set of members
+     * add a member to the database of members. Warning, this does not update the file. If the file is not updated, any
+     * new members that have been added will be lost when the application is quit.
      * @param member
      */
     public static void addMember(Member member) {
@@ -58,7 +63,6 @@ public class Storage {
         if(!isComplete)
             incompleteMembers.add(member);
         allMembers.add(member);
-        updateFile();
     }
 
     /**
@@ -71,8 +75,12 @@ public class Storage {
 
     /**
      * write new changes to the actual file so that changes are saved
+     * @param file to which we are writing changes. The file must be closed to allow for a write operation to occur
+     * @return true if the write operation was successful, false otherwise.
      */
-    private static void updateFile() {
+    private static boolean updateFile(File file) {
         //TODO: Implement this method
+        if(!file.canWrite())
+            return false;
     }
 }
