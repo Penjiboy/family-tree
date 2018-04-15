@@ -7,6 +7,52 @@
         android:layout_height="match_parent"
         tools:context="penjiboy.familytree.MainActivity">
 
+    <ImageView
+            android:layout_width="470dp"
+            android:layout_height="454dp" app:srcCompat="@drawable/tree" android:id="@+id/imageView"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/mainMenuHeaderText"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintVertical_bias="0.27999997"/>
+    <TextView
+            android:text="Know Your Roots!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/textView" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:textSize="24sp" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/quitButton" android:textStyle="bold"
+            app:layout_constraintVertical_bias="0.94"/>
+    <Button
+            android:text="Quit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/quitButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:background="@android:color/holo_orange_light"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button" android:textSize="30sp"
+            android:textAllCaps="false" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/loadExistingTreesButton"
+            app:layout_constraintVertical_bias="0.060000002"/>
+    <Button
+            android:text="Load Existing Trees"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/loadExistingTreesButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:background="@android:color/holo_orange_light"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button" android:textSize="30sp"
+            android:textAllCaps="false" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/newTreeButton" app:layout_constraintVertical_bias="0.060000002"/>
     <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -17,20 +63,52 @@
             android:textAlignment="center"
             android:contentDescription="The main menu header text"
             android:fontFamily="Serif"
-            android:textSize="40dp"
+            android:textSize="48sp"
             android:textStyle="bold"
-            android:textColor="#e00000"/>
+            android:textColor="#e00000"
+            tools:layout_editor_absoluteY="0dp"
+            android:layout_marginRight="7dp"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"/>
 
     <Button
-            android:text="View Tree"
+            android:text="New Tree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/viewTreeButton"
-            tools:layout_editor_absoluteY="92dp"
-            tools:layout_editor_absoluteX="29dp"
-            style="@android:style/Widget.Holo.Button.Borderless"
-            android:textSize="30dp"
-            android:background="@android:color/holo_green_light"
-            android:textColor="#000000"/>
+            android:id="@+id/newTreeButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:background="@android:color/holo_orange_light"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button" android:textSize="30sp"
+            android:textAllCaps="false" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/currentTreeButton"
+            app:layout_constraintVertical_bias="0.050000012"/>
+
+    <Button
+            android:text="Current Tree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/currentTreeButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:background="@android:color/holo_orange_light"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@+id/mainMenuHeaderText"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
+            app:layout_constraintVertical_bias="0.23000002"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button" android:textSize="30sp"
+            android:textAllCaps="false" android:textColor="@android:color/background_dark"/>
+    <android.support.constraint.Guideline
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/guideline"
+            app:layout_constraintGuide_begin="55dp"
+            android:orientation="horizontal"/>
 
 </android.support.constraint.ConstraintLayout>
