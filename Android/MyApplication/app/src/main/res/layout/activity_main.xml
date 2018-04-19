@@ -11,10 +11,10 @@
             android:layout_width="470dp"
             android:layout_height="454dp" app:srcCompat="@drawable/tree" android:id="@+id/imageView"
             android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/mainMenuHeaderText"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintVertical_bias="0.27999997"/>
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/mainMenuHeaderText"
+            app:layout_constraintVertical_bias="0.0"/>
     <TextView
             android:text="Know Your Roots!"
             android:layout_width="wrap_content"
@@ -29,8 +29,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/quitButton"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:background="@android:color/holo_orange_light"
             android:layout_marginLeft="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
@@ -38,47 +36,36 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Button" android:textSize="30sp"
             android:textAllCaps="false" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/loadExistingTreesButton"
-            app:layout_constraintVertical_bias="0.060000002"/>
+            app:layout_constraintVertical_bias="0.060000002" style="@style/Widget.AppCompat.Button"/>
     <Button
             android:text="Load Existing Trees"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/loadExistingTreesButton"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:background="@android:color/holo_orange_light"
             android:layout_marginLeft="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
             android:textAppearance="@style/TextAppearance.AppCompat.Button" android:textSize="30sp"
             android:textAllCaps="false" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/newTreeButton" app:layout_constraintVertical_bias="0.060000002"/>
-    <EditText
+            app:layout_constraintTop_toBottomOf="@+id/newTreeButton" app:layout_constraintVertical_bias="0.060000002"
+            style="@style/Widget.AppCompat.Button"/>
+    <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="Main Menu"
-            android:ems="10"
-            android:id="@+id/mainMenuHeaderText"
-            android:textAlignment="center"
-            android:contentDescription="The main menu header text"
-            android:fontFamily="Serif"
-            android:textSize="48sp"
-            android:textStyle="bold"
-            android:textColor="#e00000"
-            tools:layout_editor_absoluteY="0dp"
-            android:layout_marginRight="7dp"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginLeft="8dp"
-            app:layout_constraintLeft_toLeftOf="parent"/>
+            android:layout_height="wrap_content" android:id="@+id/mainMenuHeaderText" android:text="Main Menu"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp"
+            app:layout_constraintVertical_bias="0.06999999"
+            android:textAppearance="@style/TextAppearance.AppCompat.Headline" android:textSize="30sp"
+            android:textStyle="bold" android:textColor="@android:color/holo_red_dark"/>
 
     <Button
             android:text="New Tree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/newTreeButton"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:background="@android:color/holo_orange_light"
             android:layout_marginLeft="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
@@ -86,29 +73,30 @@
             android:textAppearance="@style/TextAppearance.AppCompat.Button" android:textSize="30sp"
             android:textAllCaps="false" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/currentTreeButton"
-            app:layout_constraintVertical_bias="0.050000012"/>
+            app:layout_constraintVertical_bias="0.050000012" style="@style/Widget.AppCompat.Button"/>
 
     <Button
             android:text="Current Tree"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/currentTreeButton"
-            style="@style/Widget.AppCompat.Button.Borderless"
-            android:background="@android:color/holo_orange_light"
-            android:layout_marginTop="8dp"
-            app:layout_constraintTop_toBottomOf="@+id/mainMenuHeaderText"
             android:layout_marginLeft="8dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="8dp"
-            app:layout_constraintVertical_bias="0.23000002"
-            android:textAppearance="@style/TextAppearance.AppCompat.Button" android:textSize="30sp"
-            android:textAllCaps="false" android:textColor="@android:color/background_dark"/>
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/mainMenuHeaderText"
+            app:layout_constraintVertical_bias="0.26" android:elevation="0dp" style="@style/Widget.AppCompat.Button"
+            android:textSize="30sp" android:textAllCaps="false" android:textAlignment="textStart"/>
     <android.support.constraint.Guideline
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/guideline"
             app:layout_constraintGuide_begin="55dp"
             android:orientation="horizontal"/>
+    <Button
+            android:text="Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" tools:layout_editor_absoluteY="16dp"
+            tools:layout_editor_absoluteX="16dp" android:id="@+id/button"/>
 
 </android.support.constraint.ConstraintLayout>
