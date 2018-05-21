@@ -2,9 +2,12 @@ package penjiboy.familytree;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+
+    private Button quitButton, loadExistingTreesButton, newTreeButton, currentTreeButton;
 
     // Used to load the 'native-lib' library on application startup.
     static {
@@ -15,6 +18,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //Assign each button from the UI onto variable
+        quitButton = (Button) findViewById(R.id.quitButton);
+        loadExistingTreesButton = (Button) findViewById(R.id.loadExistingTreesButton);
+        newTreeButton = (Button) findViewById(R.id.newTreeButton);
+        currentTreeButton = (Button) findViewById(R.id.currentTreeButton);
 
         /*
         // Example of a call to a native method
