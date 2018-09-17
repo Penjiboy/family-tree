@@ -74,30 +74,13 @@ public class MainActivity extends AppCompatActivity {
             setupAlertDialog();
             dialogBuilder.show();
 
-
-            /*if(!addDatabaseEntry(newTreeName)) {
-                Context context = getApplicationContext();
-                CharSequence text = "Failed to create a new tree, please try again";
-                int duration = Toast.LENGTH_SHORT;
-
-                Toast toast = Toast.makeText(context, text, duration);
-                toast.show();
-            } else {
-                Toast.makeText(
-                        getApplicationContext(),
-                        "Successfully created a new tree",
-                        Toast.LENGTH_SHORT)
-                        .show();
-
-                // Now switch to the activity responsible for adding members to a tree
-            }*/
         }
     };
 
 
     //setup alertDialog builder for newTreeButton
     private String newTreeName = "";
-    
+
     private void setupAlertDialog() {
         //Taken from https://stackoverflow.com/questions/10903754/input-text-dialog-android
         //START
