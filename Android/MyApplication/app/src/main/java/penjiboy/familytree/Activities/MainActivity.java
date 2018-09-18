@@ -1,4 +1,4 @@
-package penjiboy.familytree;
+package penjiboy.familytree.Activities;
 
 import android.content.Context;
 import android.content.DialogInterface;
@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import penjiboy.familytree.R;
 
 public class MainActivity extends AppCompatActivity {
 

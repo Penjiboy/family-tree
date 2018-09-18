@@ -26,7 +26,7 @@ public class Name {
 
         switch(names.size()) {
             case 0: throw new IllegalArgumentException("Error! Name entered is empty");
-            case 1: throw new IllegalArgumentException("Must enter at least a first and last name");
+            case 1: throw new IllegalArgumentException("Must enter at least a first and last name   ");
             case 2:
                 this.first = names.get(0);
                 this.last = names.get(1);
