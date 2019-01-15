@@ -18,14 +18,14 @@ public class Member {
     @PrimaryKey(autoGenerate = true)
     public int id;
     public String name;
-    public Calendar dateOfBirth;
-    public Calendar dateOfDeath;
-    public Gender gender;
-    public List<Member> spouse;
-    public List<Member> children;
-    public List<Member> parents;
-    public List<Member> siblings;
-    public List<String> extraNotes;
+    public String dateOfBirth;
+    public String dateOfDeath;
+    public String gender;
+//    public List<Member> spouse;
+//    public List<Member> children;
+//    public List<Member> parents;
+//    public List<Member> siblings;
+//    public List<String> extraNotes;
 
     @Ignore
     Bitmap picture;
