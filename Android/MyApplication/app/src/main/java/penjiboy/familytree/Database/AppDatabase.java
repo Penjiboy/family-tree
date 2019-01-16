@@ -6,13 +6,15 @@ import android.arch.persistence.db.SupportSQLiteDatabase;
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
+import android.arch.persistence.room.TypeConverters;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.annotation.VisibleForTesting;
 
 import java.util.List;
 
-@Database(entities = {Member.class}, version = 1)
+@Database(entities = {Member.class, Tree.class}, version = 1)
+@TypeConverters({Converters.class})
 public abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase sInstance;
@@ -21,6 +23,7 @@ public abstract class AppDatabase extends RoomDatabase {
     public static final String DATABASE_NAME = "app-db";
 
     public abstract MemberDAO memberDAO();
+    public abstract TreeDAO treeDAO();
 
     private final MutableLiveData<Boolean> mIsDatabaseCreated = new MutableLiveData<>();
 
@@ -68,7 +71,7 @@ public abstract class AppDatabase extends RoomDatabase {
     private static void insertData(final AppDatabase database, final List<Member> members) {
         database.runInTransaction(() -> {
             for(Member member : members) {
-                database.memberDAO().insertMember(member);
+                database.memberDAO().insertMembers(member);
             }
         });
     }

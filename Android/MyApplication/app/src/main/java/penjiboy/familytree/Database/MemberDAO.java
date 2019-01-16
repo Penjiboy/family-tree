@@ -8,6 +8,8 @@ import android.arch.persistence.room.Update;
 
 import java.util.List;
 
+import static android.icu.text.MessagePattern.ArgType.SELECT;
+
 /**
  * All the operations we want to be able to be able to perform on the Member table
  */
@@ -15,13 +17,16 @@ import java.util.List;
 @Dao
 public interface MemberDAO {
     @Insert
-    public void insertMember(Member member);
+    public void insertMembers(Member... members);
 
     @Update
-    public void updateMember(Member member);
+    public void updateMembers(Member... members);
 
     @Delete
-    public void deleteMember(Member member);
+    public void deleteMembers(Member... members);
+
+    @Query("SELECT * FROM Members WHERE id IS :memberId")
+    public Member getMemberFromId(int memberId);
 
     @Query("SELECT * FROM Members")
     public List<Member> getAllMembers();
