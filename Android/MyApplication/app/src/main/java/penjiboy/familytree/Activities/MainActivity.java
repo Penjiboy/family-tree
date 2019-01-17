@@ -16,12 +16,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import penjiboy.familytree.Database.AppDatabase;
+import penjiboy.familytree.Database.Tree;
 import penjiboy.familytree.R;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button loadExistingTreesButton, newTreeButton, currentTreeButton;
     private AlertDialog.Builder dialogBuilder;
+    private AppDatabase appDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         configureButtons();
         dialogBuilder = new AlertDialog.Builder(this);
+        appDatabase = AppDatabase.getsInstance(getApplicationContext());
 
         /*
         // Example of a call to a native method
@@ -100,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 newTreeName = input.getText().toString();
 
-                if(!addDatabaseEntry(newTreeName)) {
+                if(!addDatabaseTreeEntry(newTreeName)) {
                     Context context = getApplicationContext();
                     CharSequence text = "Failed to create a new tree, please try again";
                     int duration = Toast.LENGTH_SHORT;
@@ -127,9 +131,11 @@ public class MainActivity extends AppCompatActivity {
         //END
     }
 
-    private boolean addDatabaseEntry(String name) {
-        // TODO: Implement this method
-        return false; //change this
+    private boolean addDatabaseTreeEntry(String name) {
+        Tree tree = new Tree();
+        tree.name = name;
+        appDatabase.treeDAO().insertTrees(tree);
+        return true;
     }
 
 
