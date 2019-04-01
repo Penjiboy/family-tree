@@ -1,5 +1,7 @@
 package penjiboy.familytree.Activities;
 
+import android.arch.lifecycle.ViewModelProvider;
+import android.arch.lifecycle.ViewModelProviders;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -19,21 +21,23 @@ import android.widget.Toast;
 import penjiboy.familytree.Database.AppDatabase;
 import penjiboy.familytree.Database.Tree;
 import penjiboy.familytree.R;
+import penjiboy.familytree.ViewModels.MainMenuVM;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button loadExistingTreesButton, newTreeButton, currentTreeButton;
     private AlertDialog.Builder dialogBuilder;
-    private AppDatabase appDatabase;
+    MainMenuVM viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        viewModel = ViewModelProviders.of(this).get(MainMenuVM.class);
         configureButtons();
         dialogBuilder = new AlertDialog.Builder(this);
-        appDatabase = AppDatabase.getsInstance(getApplicationContext());
+
 
         /*
         // Example of a call to a native method
@@ -134,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean addDatabaseTreeEntry(String name) {
         Tree tree = new Tree();
         tree.name = name;
-        appDatabase.treeDAO().insertTrees(tree);
+        viewModel.database.treeDAO().insertTrees(tree);
         return true;
     }
 
