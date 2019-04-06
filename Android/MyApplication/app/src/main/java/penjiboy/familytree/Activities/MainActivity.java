@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        viewModel = ViewModelProviders.of(this).get(MainMenuVM.class);
+        viewModel = new MainMenuVM(getApplication());
+        //viewModel = ViewModelProviders.of(this).get(MainMenuVM.class);
         configureButtons();
         dialogBuilder = new AlertDialog.Builder(this);
 
@@ -110,7 +111,8 @@ public class MainActivity extends AppCompatActivity {
 
                 if(!addDatabaseTreeEntry(newTreeName)) {
                     Context context = getApplicationContext();
-                    CharSequence text = "Failed to create a new tree, please try again";
+                    CharSequence text = "Failed to create a new tree, " +
+                            "(tree with same name exists?) please try again";
                     int duration = Toast.LENGTH_SHORT;
 
                     Toast toast = Toast.makeText(context, text, duration);
@@ -138,8 +140,9 @@ public class MainActivity extends AppCompatActivity {
     private boolean addDatabaseTreeEntry(String name) {
         Tree tree = new Tree();
         tree.name = name;
-        viewModel.database.treeDAO().insertTrees(tree);
-        return true;
+        //viewModel.database.treeDAO().insertTrees(tree);
+        boolean success = viewModel.addTree(name);
+        return success;
     }
 
 
