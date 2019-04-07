@@ -7,9 +7,18 @@ import penjiboy.familytree.Database.Repository;
 
 public class MainMenuVM extends ViewModel {
     private Repository repository;
+    private static MainMenuVM sInstance;
 
-    public MainMenuVM(Application application) {
+    private MainMenuVM(Application application) {
         repository = new Repository(application);
+    }
+
+    public static MainMenuVM getInstance(Application application) {
+        if(sInstance == null) {
+            sInstance = new MainMenuVM(application);
+        }
+
+        return sInstance;
     }
 
     /**
