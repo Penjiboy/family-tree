@@ -10,9 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Activities.ExistingTreesActivity"
+            android:label="@string/title_activity_existing_trees_actvity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
             android:name=".Activities.ViewTreeActivity"
             android:label="@string/title_activity_view_tree"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
